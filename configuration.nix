@@ -142,7 +142,7 @@
         enable = true;
         extraArgs = "--keep 3 --keep-since 7d";
       };
-      flake = "/etc/nixos";
+      flake = "/home/cornelis/.dotfiles";
     };
     fish = {
       enable = true;
