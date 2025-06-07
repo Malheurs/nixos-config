@@ -7,6 +7,7 @@
     ./hyprland/keybinds.nix
     ./hyprland/monitors.nix
     ./hyprland/scripts.nix
+    ./hyprland/Kanagawa.nix
     ./hyprland/windowrules.nix
   ];
 
