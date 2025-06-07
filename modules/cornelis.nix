@@ -146,13 +146,23 @@
     git = {
       enable = true;
       config = {
-      user.name = "Malheurs";
-      user.mail = "malheurcornelis@proton.me";
-      init.defaultBranch = "main";
+        user = {
+          name = "Malheurs";
+          email = "malheurcornelis@proton.me";
+        };
+        init = {
+          defaultBranch = "main";
+        };
+        safe = {
+          directory = [
+            "/etc/nixos"
+            "/home/cornelis/.dotfiles"
+          ];
+        };
       };
     };
-    wireshark.enable = true;
-  };
+  wireshark.enable = true;
+};
   
   services.displayManager = {
     sddm.enable = true; 
