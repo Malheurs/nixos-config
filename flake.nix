@@ -10,13 +10,18 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";  # HyprPanel
     zen-browser.url = "github:0xc000022070/zen-browser-flake"; # Zen Browser
 
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     aagl-gtk-on-nix = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl-gtk-on-nix, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl-gtk-on-nix, home-manager, ... }:
     let
       system = "x86_64-linux";
 
@@ -43,6 +48,16 @@
           ./modules/cornelis.nix
           chaotic.nixosModules.default  # Chaotic-nix
           aagl-gtk-on-nix.nixosModules.default  # AAGL
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cornelis = import ./home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              inherit pkgs-unstable;
+            };
+          }
 
           {
             nixpkgs = {

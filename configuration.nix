@@ -305,6 +305,7 @@
     usbutils # Tools for working with USB devices, such as lsusb
 
     ### Utilities ###
+    home-manager # Nix-based user environment configurator
     jq # A lightweight and flexible command-line JSON processor
     killall # Kill all command
     yad # GUI dialog tool for shell scripts

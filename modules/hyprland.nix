@@ -2,12 +2,7 @@
 
 {
   # Remplacer le paquet hyprland dans pkgs par celui d'unstable via pkgs-unstable
-  nixpkgs.overlays = [
-    (final: prev: {
-      hyprland = pkgs-unstable.hyprland;
-      xdg-desktop-portal-hyprland = pkgs-unstable.xdg-desktop-portal-hyprland;
-    })
-  ];
+  nixpkgs.overlays = [(final: prev: { hyprland = pkgs-unstable.hyprland; xdg-desktop-portal-hyprland = pkgs-unstable.xdg-desktop-portal-hyprland; })];
 
   programs.hyprland = {
     enable = true;
@@ -70,7 +65,7 @@
     playerctl # CLI for controlling media players that implement MPRIS
     pywal # Generate and change color theme on the fly
     pyprland # Hyprland plugin system
-    qt6.qtwayland # A cross-platform application framework for C+
+    qt6.qtwayland # A cross-platform application framework for C++
     rofi-wayland # Windows switcher, DMenu
     slurp # Select region for screenshot
     swww # Animated wallpaper daemon
@@ -79,7 +74,7 @@
     wf-recorder # Screen recording
     wlsunset # Day/night gamma adjustments for Wayland
     wtype # Xdotool 
-    wlrctl # CLI for misc extesions
+    wlrctl # CLI for misc extensions
     wlr-randr # Screen utility for setting main screen
   ];
 }
