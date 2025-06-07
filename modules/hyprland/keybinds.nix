@@ -1,95 +1,80 @@
 { config, pkgs, ... }:
 
 {
-  wayland.windowManager.hyprland.settings = {
+  home.file.".config/hypr/keybinds.conf".text = ''
     # VARIABLES POUR LES APPLICATIONS
-    "$mainMod" = "SUPER";
-    "$files" = "thunar";
-    "$browser" = "zen-beta";
-    "$term" = "ghostty";
-    "$music" = "g4music";
-    "$game" = "cartridges";
-    "$scriptsDir" = "$HOME/.config/hypr/scripts";
+    $mainMod = SUPER
+    $files = thunar
+    $browser = zen-beta
+    $term = ghostty
+    $music = g4music
+    $game = cartridges
 
     # RACCOURCIS APPLICATIONS SYSTEME
-    bind = [
-      # Applications principales
-      "$mainMod, Return, exec, $term"
-      "$mainMod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run"
-      "$mainMod, B, exec, $browser"
-      "$mainMod ALT, B, exec, $browser --private-window"
-      "$mainMod, Y, exec, $music"
-      "$mainMod, T, exec, $files"
-      "$mainMod, G, exec, $game"
+    bind = $mainMod, Return, exec, $term
+    bind = $mainMod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run
+    bind = $mainMod, B, exec, $browser
+    bind = $mainMod ALT, B, exec, $browser --private-window
+    bind = $mainMod, Y, exec, $music
+    bind = $mainMod, T, exec, $files
+    bind = $mainMod, G, exec, $game
 
-      # Controles Hyprland
-      "$mainMod, F, fullscreen"
-      "$mainMod, C, killactive"
-      "$mainMod, A, togglefloating"
-      "$mainMod SHIFT, P, pseudo"
-      "$mainMod SHIFT, O, togglesplit"
-      "$mainMod SHIFT, M, exit"
-      "CTRL ALT, Delete, exec, hyprctl dispatch exit 0"
+    # CONTROLES HYPRLAND
+    bind = $mainMod, F, fullscreen
+    bind = $mainMod, C, killactive
+    bind = $mainMod, A, togglefloating
+    bind = $mainMod SHIFT, P, pseudo
+    bind = $mainMod SHIFT, O, togglesplit
+    bind = $mainMod SHIFT, M, exit
+    bind = CTRL ALT, Delete, exec, hyprctl dispatch exit 0
 
-      # Navigation espaces de travail
-      "$mainMod, tab, workspace, m+1"
-      "$mainMod SHIFT, tab, workspace, m-1"
+    # NAVIGATION ESPACES DE TRAVAIL
+    bind = $mainMod, tab, workspace, m+1
+    bind = $mainMod SHIFT, tab, workspace, m-1
 
-      # Basculer vers espaces de travail
-      "$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-      "$mainMod, 4, workspace, 4"
+    # BASCULER VERS ESPACES DE TRAVAIL
+    bind = $mainMod, 1, workspace, 1
+    bind = $mainMod, 2, workspace, 2
+    bind = $mainMod, 3, workspace, 3
+    bind = $mainMod, 4, workspace, 4
 
-      # Navigation focus
-      "$mainMod, h, movefocus, l"
-      "$mainMod, j, movefocus, d"
-      "$mainMod, k, movefocus, u"
-      "$mainMod, l, movefocus, r"
-      "$mainMod, left, movefocus, l"
-      "$mainMod, down, movefocus, d"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, right, movefocus, r"
+    # NAVIGATION FOCUS
+    bind = $mainMod, h, movefocus, l
+    bind = $mainMod, j, movefocus, d
+    bind = $mainMod, k, movefocus, u
+    bind = $mainMod, l, movefocus, r
+    bind = $mainMod, left, movefocus, l
+    bind = $mainMod, down, movefocus, d
+    bind = $mainMod, up, movefocus, u
+    bind = $mainMod, right, movefocus, r
 
-      # Deplacer fenetre vers espace de travail
-      "$mainMod SHIFT, 1, movetoworkspace, 1"
-      "$mainMod SHIFT, 2, movetoworkspace, 2"
-      "$mainMod SHIFT, 3, movetoworkspace, 3"
-      "$mainMod SHIFT, 4, movetoworkspace, 4"
-      "$mainMod SHIFT, 5, movetoworkspace, 5"
-      "$mainMod SHIFT, 6, movetoworkspace, 6"
-      "$mainMod SHIFT, 7, movetoworkspace, 7"
-      "$mainMod SHIFT, 8, movetoworkspace, 8"
-      "$mainMod SHIFT, 9, movetoworkspace, 9"
-      "$mainMod SHIFT, 0, movetoworkspace, 10"
+    # DEPLACER FENETRE VERS ESPACE DE TRAVAIL
+    bind = $mainMod SHIFT, 1, movetoworkspace, 1
+    bind = $mainMod SHIFT, 2, movetoworkspace, 2
+    bind = $mainMod SHIFT, 3, movetoworkspace, 3
+    bind = $mainMod SHIFT, 4, movetoworkspace, 4
+    bind = $mainMod SHIFT, 5, movetoworkspace, 5
+    bind = $mainMod SHIFT, 6, movetoworkspace, 6
+    bind = $mainMod SHIFT, 7, movetoworkspace, 7
+    bind = $mainMod SHIFT, 8, movetoworkspace, 8
+    bind = $mainMod SHIFT, 9, movetoworkspace, 9
+    bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
-      # Navigation souris
-      "$mainMod, mouse_down, workspace, 1"
-      "$mainMod, mouse_up, workspace, 4"
+    # NAVIGATION SOURIS
+    bind = $mainMod, mouse_down, workspace, e+1
+    bind = $mainMod, mouse_up, workspace, e-1
 
-      # Wallpapers
-      "$mainMod, W, exec, $scriptsDir/WallpaperSelect.sh"
-      "CTRL ALT, W, exec, $scriptsDir/Wallpaper.sh"
+    # WALLPAPERS
+    bind = $mainMod, W, exec, ~/.config/hypr/scripts/WallpaperSelect.sh
+    bind = CTRL ALT, W, exec, ~/.config/hypr/scripts/Wallpaper.sh
 
-      # Fonctionnalites extras
-      "$mainMod ALT, R, exec, $scriptsDir/Refresh.sh"
-      "$mainMod SHIFT, H, exec, $scriptsDir/KeyHints.sh"
-      "$mainMod ALT, Space, exec, $scriptsDir/ChangeLayout.sh"
-
-      # Submap pour mode deplacement
-      ",escape,submap,reset"
-    ];
+    # FONCTIONNALITES EXTRAS
+    bind = $mainMod ALT, R, exec, ~/.config/hypr/scripts/Refresh.sh
+    bind = $mainMod SHIFT, H, exec, ~/.config/hypr/scripts/KeyHints.sh
+    bind = $mainMod ALT, Space, exec, ~/.config/hypr/scripts/ChangeLayout.sh
 
     # RACCOURCIS SOURIS
-    bindm = [
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
-    ];
-
-    # SUBMAP MOVE
-    submap = [
-      "move"
-      "reset"
-    ];
-  };
+    bindm = $mainMod, mouse:272, movewindow
+    bindm = $mainMod, mouse:273, resizewindow
+  '';
 }

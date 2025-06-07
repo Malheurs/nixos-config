@@ -1,107 +1,102 @@
 { config, pkgs, ... }:
 
 {
-  wayland.windowManager.hyprland.settings = {
+  home.file.".config/hypr/windowrules.conf".text = ''
     # REGLES FENETRES GENERALES
-    windowrule = [
-      # Applications systeme
-      "float,class:(polkit-gnome-authentication-agent-1)"
-      "stayfocused,class:(polkit-gnome-authentication-agent-1)"
-      "float,class:(nm-connection-editor|blueman-manager)"
-      "float,class:(nwg-look|qt5ct|mpv|eog|zoom|rofi|org.gnome.SystemMonitor|yad)"
-      "float,class:(onedriver|onedriver-launcher)"
-      "float,class:(mpv|imv)"
-      "opaque,class:(mpv|imv)"
-      
-      # Audio
-      "float,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)"
-      "opaque,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)"
-      "center,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)"
-      "size 1250 775,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol|org.gnome.SystemMonitor)"
-      
-      # VPN et autres
-      "float,title:(Proton VPN)"
-      "opaque,title:(Proton VPN)"
-      "float,class:(xdg-desktop-portal-gtk)"
-      "float,class:(codium|codium-url-handler|VSCodium|code-oss),title:(Add Folder to Workspace)"
-      
-      # Transparence applications
-      "opacity 0.9 0.8,class:^(vesktop)$"
-      "opacity 0.9 0.7,class:^(firefox|Firefox-esr|librewolf|floorp)$"
-      "opacity 0.8 0.6,class:^(pcmanfm-qt)$"
-      "opacity 0.9 0.8,class:^(kitty|com.mitchellh.ghostty)$"
-      "opacity 0.9 0.7,class:^([Rr]ofi|gedit|codium|codium-url-handler|yad|com.obsproject.Studio|com.github.neithern.g4music|page.kramo.Cartridges)$"
-      
-      # Exceptions opacite pour streaming
-      "opaque,class:^(librewolf|floorp|zen-beta),title:(.*)([Tt]witch|[Yy]ou[Tt]ube)(.*)"
-      "stayfocused,class:^(gcr-prompter|polkit-gnome-authentication-agent-1)$"
-      
-      # Inhiber mise en veille pour plein ecran
-      "idleinhibit fullscreen,class:^(*)$"
-      "idleinhibit fullscreen,title:^(*)$"
-      "idleinhibit fullscreen,fullscreen:1"
-      
-      # Ignorer demandes maximisation
-      "suppressevent maximize,class:.*"
-      
-      # Thunar
-      "opacity 0.9 0.8,class:^([Tt]hunar)$"
-      "float,class:^([Tt]hunar),title:(Opération sur des fichiers en cours|Confirmer le remplacement de fichiers)$"
-      "center,class:^([Tt]hunar),title:(Opération sur des fichiers en cours|Confirmer le remplacement de fichiers)$"
-      
-      # qBittorrent
-      "workspace 3,class:^(org.qbittorrent.qBittorrent)$"
-      "monitor 2,class:^(org.qbittorrent.qBittorrent)$"
-      
-      # Steam
-      "monitor DP-2,title:^([Ss]team)$"
-      "workspace 1,title:^([Ss]team)$"
-      "center 1,title:^([Ss]team)$"
-      "opaque,title:^([Ss]team)$"
-      "size 1250 775,title:^([Ss]team)$"
-      "float,class:^([Ss]team)$"
-      "float,class:([Ss]team)$,title:^(Paramètres Steam|Steam Settings|Lancement...)$"
-      "center 1,class:^([Ss]team)$,title:^(Paramètres Steam|Steam Settings|Lancement...)$"
-      "monitor DP-2,class:^steam_app_\\d+$"
-      "workspace 4,class:^steam_app_\\d+$"
-      "fullscreen,class:^steam_app_\\d+$"
-      "stayfocused,title:^()$,class:^([Ss]team)$"
-      "minsize 1 1,title:^()$,class:^([Ss]team)$"
-      
-      # Dark Age of Camelot
-      "float,title:^(Eden Launcher)$"
-      "opaque,title:^(Eden Launcher)$"
-      "monitor DP-2,class:^(edenlauncher.exe)$"
-      "workspace 1,class:^(edenlauncher.exe)$"
-      "monitor DP-2,class:^(game.dll)$"
-      "workspace 4,class:^(game.dll)$"
-      "fullscreen,class:^(game.dll)$"
-      
-      # Genshin Impact
-      "monitor DP-2,class:^(genshinimpact.exe)$"
-      "workspace 4,class:^(genshinimpact.exe)$"
-      "fullscreen,class:^(genshinimpact.exe)$"
-      
-      # Cave of Qud
-      "monitor DP-2,class:^(CoQ.x86_64)$"
-      "workspace 4,class:^(CoQ.x86_64)$"
-      "fullscreen,class:^(CoQ.x86_64)$"
-      
-      # Picture-in-Picture
-      "opacity 0.95 0.75,title:^(Picture-in-Picture)$"
-      "pin,title:^(Picture-in-Picture)$"
-      "float,title:^(Incrustation vidéo)$"
-      "float,title:^(floorp)$"
-      "size 25% 25%,title:^(Picture-in-Picture)$"
-      "move 72% 7%,title:^(Picture-in-Picture)$"
-    ];
+    windowrule = float,class:(polkit-gnome-authentication-agent-1)
+    windowrule = stayfocused,class:(polkit-gnome-authentication-agent-1)
+    windowrule = float,class:(nm-connection-editor|blueman-manager)
+    windowrule = float,class:(nwg-look|qt5ct|mpv|eog|zoom|rofi|org.gnome.SystemMonitor|yad)
+    windowrule = float,class:(onedriver|onedriver-launcher)
+    windowrule = float,class:(mpv|imv)
+    windowrule = opaque,class:(mpv|imv)
+    
+    # Audio
+    windowrule = float,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)
+    windowrule = opaque,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)
+    windowrule = center,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)
+    windowrule = size 1250 775,class:(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol|org.gnome.SystemMonitor)
+    
+    # VPN et autres
+    windowrule = float,title:(Proton VPN)
+    windowrule = opaque,title:(Proton VPN)
+    windowrule = float,class:(xdg-desktop-portal-gtk)
+    windowrule = float,class:(codium|codium-url-handler|VSCodium|code-oss),title:(Add Folder to Workspace)
+    
+    # Transparence applications
+    windowrule = opacity 0.9 0.8,class:^(vesktop)$
+    windowrule = opacity 0.9 0.7,class:^(firefox|Firefox-esr|librewolf|floorp)$
+    windowrule = opacity 0.8 0.6,class:^(pcmanfm-qt)$
+    windowrule = opacity 0.9 0.8,class:^(kitty|com.mitchellh.ghostty)$
+    windowrule = opacity 0.9 0.7,class:^([Rr]ofi|gedit|codium|codium-url-handler|yad|com.obsproject.Studio|com.github.neithern.g4music|page.kramo.Cartridges)$
+    
+    # Exceptions opacite pour streaming
+    windowrule = opaque,class:^(librewolf|floorp|zen-beta),title:(.*)([Tt]witch|[Yy]ou[Tt]ube)(.*)
+    windowrule = stayfocused,class:^(gcr-prompter|polkit-gnome-authentication-agent-1)$
+    
+    # Inhiber mise en veille pour plein ecran
+    windowrule = idleinhibit fullscreen,class:^(.*)$
+    windowrule = idleinhibit fullscreen,title:^(.*)$
+    windowrule = idleinhibit fullscreen,fullscreen:1
+    
+    # Ignorer demandes maximisation
+    windowrule = suppressevent maximize,class:.*
+    
+    # Thunar
+    windowrule = opacity 0.9 0.8,class:^([Tt]hunar)$
+    windowrule = float,class:^([Tt]hunar),title:(Opération sur des fichiers en cours|Confirmer le remplacement de fichiers)$
+    windowrule = center,class:^([Tt]hunar),title:(Opération sur des fichiers en cours|Confirmer le remplacement de fichiers)$
+    
+    # qBittorrent
+    windowrule = workspace 3,class:^(org.qbittorrent.qBittorrent)$
+    windowrule = monitor 2,class:^(org.qbittorrent.qBittorrent)$
+    
+    # Steam
+    windowrule = monitor DP-2,title:^([Ss]team)$
+    windowrule = workspace 1,title:^([Ss]team)$
+    windowrule = center 1,title:^([Ss]team)$
+    windowrule = opaque,title:^([Ss]team)$
+    windowrule = size 1250 775,title:^([Ss]team)$
+    windowrule = float,class:^([Ss]team)$
+    windowrule = float,class:([Ss]team)$,title:^(Paramètres Steam|Steam Settings|Lancement...)$
+    windowrule = center 1,class:^([Ss]team)$,title:^(Paramètres Steam|Steam Settings|Lancement...)$
+    windowrule = monitor DP-2,class:^steam_app_\\d+$
+    windowrule = workspace 4,class:^steam_app_\\d+$
+    windowrule = fullscreen,class:^steam_app_\\d+$
+    windowrule = stayfocused,title:^()$,class:^([Ss]team)$
+    windowrule = minsize 1 1,title:^()$,class:^([Ss]team)$
+    
+    # Dark Age of Camelot
+    windowrule = float,title:^(Eden Launcher)$
+    windowrule = opaque,title:^(Eden Launcher)$
+    windowrule = monitor DP-2,class:^(edenlauncher.exe)$
+    windowrule = workspace 1,class:^(edenlauncher.exe)$
+    windowrule = monitor DP-2,class:^(game.dll)$
+    windowrule = workspace 4,class:^(game.dll)$
+    windowrule = fullscreen,class:^(game.dll)$
+    
+    # Genshin Impact
+    windowrule = monitor DP-2,class:^(genshinimpact.exe)$
+    windowrule = workspace 4,class:^(genshinimpact.exe)$
+    windowrule = fullscreen,class:^(genshinimpact.exe)$
+    
+    # Cave of Qud
+    windowrule = monitor DP-2,class:^(CoQ.x86_64)$
+    windowrule = workspace 4,class:^(CoQ.x86_64)$
+    windowrule = fullscreen,class:^(CoQ.x86_64)$
+    
+    # Picture-in-Picture
+    windowrule = opacity 0.95 0.75,title:^(Picture-in-Picture)$
+    windowrule = pin,title:^(Picture-in-Picture)$
+    windowrule = float,title:^(Incrustation vidéo)$
+    windowrule = float,title:^(floorp)$
+    windowrule = size 25% 25%,title:^(Picture-in-Picture)$
+    windowrule = move 72% 7%,title:^(Picture-in-Picture)$
 
     # REGLES FENETRES V2 (pour syntaxe plus avancee)
-    windowrulev2 = [
-      "float,class:^(thunar)$,title:^(.*[Rr]enommer.*)$"
-      "size 400 150,class:^(thunar)$,title:^(.*[Rr]enommer.*)$"
-      "center,class:^(thunar)$,title:^(.*[Rr]enommer.*)$"
-      "forcergbx,class:^(OrcaSlicer)$"
-    ];
-  };
+    windowrulev2 = float,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
+    windowrulev2 = size 400 150,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
+    windowrulev2 = center,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
+    windowrulev2 = forcergbx,class:^(OrcaSlicer)$
+  '';
 }
