@@ -11,9 +11,6 @@
     ./hyprland/windowrules.nix
   ];
 
-  # Activer Hyprland via Home Manager
-  wayland.windowManager.hyprland.enable = true;
-
   # Configuration de base via home.file
   home.file.".config/hypr/hyprland.conf".text = ''
     # Source des configurations
