@@ -2,11 +2,12 @@
 
 {
   imports = [
-    ./hyprland/monitors.nix
     ./hyprland/animations.nix
-    ./hyprland/keybinds.nix
-    ./hyprland/windowrules.nix
     ./hyprland/environment.nix
+    ./hyprland/keybinds.nix
+    ./hyprland/monitors.nix
+    ./hyprland/scripts.nix
+    ./hyprland/windowrules.nix
   ];
 
   # Configuration utilisateur Hyprland
