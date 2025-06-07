@@ -14,25 +14,6 @@
   };
   
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_RENDERER = "vulkan";
-    
-    # Nouvelles optimisations NVIDIA/Wayland
-    LIBVA_DRIVER_NAME = "nvidia";
-    WLR_DRM_NO_ATOMIC = "1";  # Si problèmes de stabilité
-    CLUTTER_BACKEND = "wayland";
-    SDL_VIDEODRIVER = "wayland";
-    QT_QPA_PLATFORM = "wayland;xcb";  # Fallback sur X11 si nécessaire
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    
-    # Performance
-    __GL_GSYNC_ALLOWED = "1";
-    __GL_VRR_ALLOWED = "1";
-    
     # Necessary for e.g. `Hyprland` config `exec` commands to use `gsettings`,
     # e.g. to bind keys for switching light/dark mode.
     XDG_DATA_DIRS =
