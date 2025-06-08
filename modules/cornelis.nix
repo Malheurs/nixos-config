@@ -178,7 +178,7 @@
   services.goxlr-utility.enable = true;
 
   environment.sessionVariables = {
-    FLAKE = "/etc/nixos";
+    FLAKE = "/home/cornelis/.dotfiles";
   };
 
   # Orca Slicer Workaround

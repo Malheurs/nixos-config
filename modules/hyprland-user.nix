@@ -64,6 +64,7 @@
         swallow_regex = ^(kitty|com.mitchellh.ghostty)$
         close_special_on_empty = true
         new_window_takes_over_fullscreen = 2
+        enable_anr_dialog = false
     }
 
     # CONFIGURATION BINDS
