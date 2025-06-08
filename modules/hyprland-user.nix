@@ -23,7 +23,7 @@
 
     # CONFIGURATION INPUT
     input {
-        kb_layout = fr
+        kb_layout = qwerty-fr
         kb_variant = 
         kb_model = 
         kb_rules = 
