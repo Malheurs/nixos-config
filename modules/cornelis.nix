@@ -127,15 +127,15 @@
           {
             name = "kanagawa-vscode-color-theme";
             publisher = "metaphore";
-            version = "0.2.1";
-            sha256 = "sha256-i/PCuJFnqHuwFS0K2CsCCOw1oikSeTt+e2vPslLCSpc=";
+            version = "0.5.0";
+            sha256 = "sha256-Os4v1zXnr+WLXyvjS8qgf3UOJHGd4lmCczjVaCArXtA=";
           }
           # Additional Web Development
           {
             name = "vscode-html-css";
             publisher = "ecmel";
-            version = "2.0.1";
-            sha256 = "sha256-6JAcAwlNJXEAmU21rNUBBUl4usz7MkEpER3bRucSa74=";
+            version = "2.0.13";
+            sha256 = "sha256-2BtvIyeUaABsWjQNCSAk0WaGD75ecRA6yWbM/OiMyM0=";
           }
         ];
       })
