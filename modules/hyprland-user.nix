@@ -85,6 +85,12 @@
         cm_enabled = true
     }
 
+    # VARIABLES
+    $scriptsDir = ~/.config/hypr/scripts
+    $lock = $scriptsDir/LockScreen.sh
+    $SwwwRandom = $scriptsDir/WallpaperRandom.sh
+    $WallpaperPath = ~/Images/wallpapers
+
     # APPLICATIONS AU DEMARRAGE
     exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP & # for XDPH
     exec-once = dbus-update-activation-environment --systemd --all &                               # for XDPH
