@@ -67,7 +67,7 @@
       nooption domain_name
       nooption domain_search
     '';
-    nameservers = [ "194.242.2.2" "2a07:e340::2" ];
+    nameservers = [ "9.9.9.9" "149.112.112.112" "2620:fe::9" "2620:fe::fe" ];
     firewall = {
       enable = true;
       allowPing = true;
