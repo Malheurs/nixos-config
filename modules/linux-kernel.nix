@@ -21,6 +21,8 @@
     "kernel.nmi_watchdog" = 0;              # Désactiver watchdog pour économiser CPU
     "net.core.rmem_max" = 16777216;         # Augmentation de la taille des buffers réseau
     "net.core.wmem_max" = 16777216;
+    "net.core.rmem_default" = 262144;
+    "net.core.wmem_default" = 262144;
     "net.ipv4.tcp_rmem" = "4096 87380 16777216";
     "net.ipv4.tcp_wmem" = "4096 65536 16777216";
     "net.ipv4.tcp_congestion_control" = "bbr"; # Algorithme BBR pour meilleure performance réseau
