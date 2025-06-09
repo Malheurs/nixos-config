@@ -43,19 +43,10 @@
     bind = $mainMod, j, movefocus, d
     bind = $mainMod, k, movefocus, u
     bind = $mainMod, l, movefocus, r
-    bind = $mainMod, Shift, h, movewindoworgroup, l
-    bind = $mainMod, Shift, j, movewindoworgroup, d
-    bind = $mainMod, Shift, k, movewindoworgroup, u
-    bind = $mainMod, Shift, l, movewindoworgroup, r
     bind = $mainMod, left, movefocus, l
     bind = $mainMod, down, movefocus, d
     bind = $mainMod, up, movefocus, u
     bind = $mainMod, right, movefocus, r
-    bind = $mainMod, Shift, left, movewindoworgroup, l
-    bind = $mainMod, Shift, down, movewindoworgroup, d
-    bind = $mainMod, Shift, up, movewindoworgroup, u
-    bind = $mainMod, Shift, right, movewindoworgroup, r
-    
 
     # DEPLACER FENETRE VERS ESPACE DE TRAVAIL
     bind = $mainMod SHIFT, 1, movetoworkspace, 1
