@@ -57,6 +57,7 @@
       unstable.lutris # Open Source gaming platform for GNU/Linux
       mangohud # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
       moonlight-qt # Play your PC games on almost any device
+      sunshine # Sunshine is a Game stream host for Moonlight
 
       ### Gaming Utilities ###
       unstable.path-of-building # Offline build planner for Path of Exile
