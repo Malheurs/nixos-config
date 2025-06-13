@@ -187,7 +187,7 @@
       capSysAdmin = true;
       openFirewall = true;
     };
-  }
+  };
 
   environment.sessionVariables = {
     FLAKE = "/home/cornelis/.dotfiles";
