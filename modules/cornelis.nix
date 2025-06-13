@@ -177,6 +177,17 @@
   hardware.wooting.enable = true;
 
   services.goxlr-utility.enable = true;
+  services = {
+    goxlr-utility = {
+      enable = true;
+    };
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+  }
 
   environment.sessionVariables = {
     FLAKE = "/home/cornelis/.dotfiles";
