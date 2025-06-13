@@ -176,7 +176,6 @@
 
   hardware.wooting.enable = true;
 
-  services.goxlr-utility.enable = true;
   services = {
     goxlr-utility = {
       enable = true;
