@@ -56,7 +56,7 @@
       unstable.heroic # A Native GOG, Epic, and Amazon Games Launcher for Linux, Windows and Mac
       unstable.lutris # Open Source gaming platform for GNU/Linux
       mangohud # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
-      protonup-qt # Install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE for Lutris with this graphical user interface
+      moonlight-qt # Play your PC games on almost any device
 
       ### Gaming Utilities ###
       unstable.path-of-building # Offline build planner for Path of Exile
