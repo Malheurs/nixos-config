@@ -104,6 +104,7 @@
     exec-once = wl-paste --type image --watch cliphist store & # clipboard store image data
     exec-once = sleep 1.5 && swww query || swww init  & # init wallpaper switcher
     exec-once = sleep 1.5 && $SwwwRandom $WallpaperPath & # random wallpaper switcher every 30 minutes
+    exec-once = $scriptsDir/zen-workspace-manager.sh
     # Make DP-2 the primary monitor
     exec-once = sleep 1.5s && hyprctl dispatch workspace 1 & # start on workspace 1
     exec-once = sleep 7 && xrandr --output DP-2 --primary # set primary monitor

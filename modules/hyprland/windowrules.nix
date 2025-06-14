@@ -101,13 +101,5 @@
     windowrulev2 = size 400 150,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
     windowrulev2 = center,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
     windowrulev2 = forcergbx,class:^(OrcaSlicer)$
-
-    # REGLES POUR ZEN BROWSER
-    windowrulev2 = monitor DP-2, class:^($browser)$, title:.*[Mm]onitor1.*
-    windowrulev2 = workspace 1, class:^($browser)$, title:.*[Mm]onitor1.*
-    windowrulev2 = monitor HDMI-A-1, class:^($browser)$, title:.*[Mm]onitor2.*
-    windowrulev2 = workspace 2, class:^($browser)$, title:.*[Mm]onitor2.*
-    windowrulev2 = monitor DP-3, class:^($browser)$, title:.*[Mm]onitor3.*
-    windowrulev2 = workspace 3, class:^($browser)$, title:.*[Mm]onitor3.*
   '';
 }
