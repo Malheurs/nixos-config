@@ -35,7 +35,6 @@
     cliphist # Wayland clipboard manager
     dunst # Notification daemon
     eww # ElKowars wacky widgets
-    hyprlock # Hyprland's GPU-accelerated screen locking utility
     hyprpaper # Blazing fast wayland wallpaper utility
     hyprpanel # Hyprland's panel ### Bind to flake ###
     hyprpicker # Wayland color picker
