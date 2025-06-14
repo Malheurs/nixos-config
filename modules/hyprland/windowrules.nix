@@ -2,6 +2,9 @@
 
 {
   home.file.".config/hypr/windowrules.conf".text = ''
+    # VARIABLES POUR LES APPLICATIONS
+    $browser = zen-beta
+
     # REGLES FENETRES GENERALES
     windowrule = float,class:(polkit-gnome-authentication-agent-1)
     windowrule = stayfocused,class:(polkit-gnome-authentication-agent-1)
@@ -98,5 +101,13 @@
     windowrulev2 = size 400 150,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
     windowrulev2 = center,class:^(thunar)$,title:^(.*[Rr]enommer.*)$
     windowrulev2 = forcergbx,class:^(OrcaSlicer)$
+
+    # REGLES POUR ZEN BROWSER
+    windowrulev2 = workspace 1, class:^($browser)$, title:.*monitor1.*
+    windowrulev2 = workspace 2, class:^($browser)$, title:.*monitor2.*
+    windowrulev2 = workspace 3, class:^($browser)$, title:.*monitor3.*
+    windowrulev2 = monitor DP-2, class:^($browser)$, title:.*monitor1.*
+    windowrulev2 = monitor HDMI-A-1, class:^($browser)$, title:.*monitor2.*
+    windowrulev2 = monitor DP-3, class:^($browser)$, title:.*monitor3.*
   '';
 }
