@@ -65,23 +65,25 @@
   networking.firewall.allowedTCPPorts = [ 2049 111 ];
   networking.firewall.allowedUDPPorts = [ 2049 111 ];
 
+  # Configuration optimisée pour les volumes pleins
   fileSystems."/mnt/Documents" = {
     device = "192.168.1.83:/volume1/Documents";
     fsType = "nfs";
     options = [ 
-      "vers=4.1"                              # Utiliser NFSv4.1 pour de meilleures performances
-      "rsize=1048576"                         # Taille de lecture augmentée (1MB)
-      "wsize=1048576"                         # Taille d'écriture augmentée (1MB)
-      "hard"                                  # Montage dur pour éviter la corruption
-      "intr"                                  # Permettre l'interruption
-      "timeo=600"                             # Timeout augmenté à 60 secondes (600 dixièmes)
-      "retrans=2"                             # Nombre de retransmissions
+      "vers=4.1"
+      "rsize=131072"                         # Réduire à 128KB pour les volumes pleins
+      "wsize=131072"                         # Réduire à 128KB pour les volumes pleins
+      "soft"                                 # CHANGÉ: soft mount pour éviter les blocages
+      "intr"                                 # Permettre l'interruption
+      "timeo=50"                             # RÉDUIT: timeout plus court (5 sec)
+      "retrans=1"                            # RÉDUIT: moins de retransmissions
+      "bg"                                   # Montage en arrière-plan
       "x-systemd.automount" 
       "noauto" 
-      "x-systemd.mount-timeout=180"           # Timeout de montage augmenté
+      "x-systemd.mount-timeout=30"           # RÉDUIT: timeout de montage plus court
       "x-systemd.after=network-online.target"
-      "x-systemd.idle-timeout=1200"           # Timeout d'inactivité augmenté (20 min)
-      "_netdev"                               # Montage réseau
+      "x-systemd.idle-timeout=300"           # RÉDUIT: timeout d'inactivité (5 min)
+      "_netdev"
     ];
   };
 
@@ -90,17 +92,18 @@
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=1048576"
-      "wsize=1048576"
-      "hard"
+      "rsize=131072"
+      "wsize=131072"
+      "soft"
       "intr"
-      "timeo=600"
-      "retrans=2"
+      "timeo=50"
+      "retrans=1"
+      "bg"
       "x-systemd.automount" 
       "noauto" 
-      "x-systemd.mount-timeout=180"
+      "x-systemd.mount-timeout=30"
       "x-systemd.after=network-online.target"
-      "x-systemd.idle-timeout=1200"
+      "x-systemd.idle-timeout=300"
       "_netdev" 
     ];
   };
@@ -110,17 +113,18 @@
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=1048576"
-      "wsize=1048576"
-      "hard"
+      "rsize=131072"
+      "wsize=131072"
+      "soft"
       "intr"
-      "timeo=600"
-      "retrans=2"
+      "timeo=50"
+      "retrans=1"
+      "bg"
       "x-systemd.automount" 
       "noauto" 
-      "x-systemd.mount-timeout=180"
+      "x-systemd.mount-timeout=30"
       "x-systemd.after=network-online.target"
-      "x-systemd.idle-timeout=1200"
+      "x-systemd.idle-timeout=300"
       "_netdev"
     ];
   };
@@ -130,14 +134,15 @@
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=1048576"
-      "wsize=1048576"
-      "hard"
+      "rsize=131072"
+      "wsize=131072"
+      "soft"
       "intr"
-      "timeo=600"
-      "retrans=2"
+      "timeo=50"
+      "retrans=1"
+      "bg"
       "x-systemd.automount" 
-      "x-systemd.mount-timeout=180"
+      "x-systemd.mount-timeout=30"
       "x-systemd.after=network-online.target"
       "_netdev"
     ];
@@ -148,14 +153,15 @@
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=1048576"
-      "wsize=1048576"
-      "hard"
+      "rsize=131072"
+      "wsize=131072"
+      "soft"
       "intr"
-      "timeo=600"
-      "retrans=2"
+      "timeo=50"
+      "retrans=1"
+      "bg"
       "x-systemd.automount" 
-      "x-systemd.mount-timeout=180"
+      "x-systemd.mount-timeout=30"
       "x-systemd.after=network-online.target"
       "_netdev"
     ];
@@ -166,14 +172,15 @@
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=1048576"
-      "wsize=1048576"
-      "hard"
+      "rsize=131072"
+      "wsize=131072"
+      "soft"
       "intr"
-      "timeo=600"
-      "retrans=2"
+      "timeo=50"
+      "retrans=1"
+      "bg"
       "x-systemd.automount" 
-      "x-systemd.mount-timeout=180"
+      "x-systemd.mount-timeout=30"
       "x-systemd.after=network-online.target"
       "_netdev"
     ];
