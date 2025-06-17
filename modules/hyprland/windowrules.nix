@@ -68,6 +68,16 @@
     windowrule = fullscreen,class:^steam_app_\\d+$
     windowrule = stayfocused,title:^()$,class:^([Ss]team)$
     windowrule = minsize 1 1,title:^()$,class:^([Ss]team)$
+
+    # Cave of Qud
+    windowrule = monitor DP-2,class:^(CoQ.x86_64)$
+    windowrule = workspace 4,class:^(CoQ.x86_64)$
+    windowrule = fullscreen,class:^(CoQ.x86_64)$
+
+    # Clair Obscur - Expedition 33
+    windowrule = monitor DP-2,class:^(sandfall-win64-shipping.exe)$
+    windowrule = workspace 4,class:^(sandfall-win64-shipping.exe)$
+    windowrule = fullscreen,class:^(sandfall-win64-shipping.exe)$
     
     # Dark Age of Camelot
     windowrule = float,title:^(Eden Launcher)$
@@ -82,11 +92,6 @@
     windowrule = monitor DP-2,class:^(genshinimpact.exe)$
     windowrule = workspace 4,class:^(genshinimpact.exe)$
     windowrule = fullscreen,class:^(genshinimpact.exe)$
-    
-    # Cave of Qud
-    windowrule = monitor DP-2,class:^(CoQ.x86_64)$
-    windowrule = workspace 4,class:^(CoQ.x86_64)$
-    windowrule = fullscreen,class:^(CoQ.x86_64)$
     
     # Picture-in-Picture
     windowrule = opacity 0.95 0.75,title:^(Picture-in-Picture)$
