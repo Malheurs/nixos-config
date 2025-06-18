@@ -15,13 +15,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    aagl-gtk-on-nix = {
+    aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl-gtk-on-nix, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl, home-manager, ... }:
     let
       system = "x86_64-linux";
 
@@ -47,7 +47,7 @@
           ./configuration.nix
           ./modules/cornelis.nix
           chaotic.nixosModules.default  # Chaotic-nix
-          aagl-gtk-on-nix.nixosModules.default  # AAGL
+          aagl.nixosModules.default  # AAGL
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

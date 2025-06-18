@@ -26,7 +26,7 @@
     trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
   };
   
-  imports = [ inputs.aagl-gtk-on-nix.nixosModules.default];
+  imports = [ inputs.aagl.nixosModules.default];
 
   programs.anime-game-launcher.enable = true;
   aagl.enableNixpkgsReleaseBranchCheck = false;
