@@ -111,7 +111,7 @@
 
   fonts.packages = with pkgs; [
     fira-code font-awesome_5 font-awesome_4 google-fonts hack-font
-    jetbrains-mono line-awesome weather-icons
+    jetbrains-mono line-awesome noto-fonts-cjk-sans noto-fonts-cjk-serif ipafont kochi-substitue takao weather-icons
   ] ++ (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)); # All Nerd Fonts
 
   services = {
