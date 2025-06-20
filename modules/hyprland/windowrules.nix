@@ -63,9 +63,12 @@
     windowrule = float,class:^([Ss]team)$
     windowrule = float,class:([Ss]team)$,title:^(Paramètres Steam|Steam Settings|Lancement...)$
     windowrule = center 1,class:^([Ss]team)$,title:^(Paramètres Steam|Steam Settings|Lancement...)$
-    windowrule = monitor DP-2,class:^steam_app_\\d+$
-    windowrule = workspace 4,class:^steam_app_\\d+$
-    windowrule = fullscreen,class:^steam_app_\\d+$
+    windowrule = monitor DP-2,class:^steam_app_[0-9]+$
+    windowrule = workspace 4,class:^steam_app_[0-9]+$
+    windowrule = fullscreen,class:^steam_app_[0-9]+$
+    windowrule = monitor DP-2,class:^steam_app_.*$
+    windowrule = workspace 4,class:^steam_app_.*$
+    windowrule = fullscreen,class:^steam_app_.*$
     windowrule = stayfocused,title:^()$,class:^([Ss]team)$
     windowrule = minsize 1 1,title:^()$,class:^([Ss]team)$
 
