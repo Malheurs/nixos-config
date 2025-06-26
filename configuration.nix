@@ -110,8 +110,8 @@
   };
 
   fonts.packages = with pkgs; [
-    fira-code font-awesome_5 font-awesome_4 google-fonts hack-font jetbrains-mono line-awesome
-    noto-fonts-cjk-sans noto-fonts-cjk-serif ipafont kochi-substitute takao weather-icons
+    dejavu_fonts fira-code font-awesome_5 font-awesome_4 google-fonts hack-font jetbrains-mono 
+    line-awesome noto-fonts-cjk-sans noto-fonts-cjk-serif ipafont kochi-substitute takao weather-icons
   ] ++ (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)); # All Nerd Fonts
 
   services = {
@@ -271,9 +271,9 @@
     bottom # A cross-platform graphical process/system monitor with a customizable interface
     btop # A monitor of resources
     dysk # Get information on your mounted disks
-    gnome-system-monitor # Gnome monitor
     htop # An interactive process viewer
     kmon # Linux Kernel Manager and Activity Monitor
+    mission-center # Monitor your CPU, Memory, Disk, Network and GPU usage
     nvtopPackages.full # A (h)top like task monitor for AMD, Adreno, Intel and NVIDIA GPUs
 
     ### Theming & Appearance ###
