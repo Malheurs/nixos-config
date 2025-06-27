@@ -19,9 +19,14 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dotfiles = {
+      url = "path:.";
+      flake = false;
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl, home-manager, dotfiles, ... }:
     let
       system = "x86_64-linux";
 
@@ -70,6 +75,7 @@
         specialArgs = {
           inherit pkgs-unstable;
           inherit inputs;
+          inherit dotfiles;
         };
       };
     };
