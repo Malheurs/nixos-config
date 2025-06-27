@@ -192,6 +192,30 @@
     FLAKE = "/home/cornelis/.dotfiles";
   };
 
+  # Symlink dotfiles
+  environment.etc = {
+    "nixos/configuration.nix".source = /home/user/.dotfiles/configuration.nix;
+    "nixos/hardware-configuration.nix".source = /home/user/.dotfiles/hardware-configuration.nix;
+    "nixos/home.nix".source = /home/user/.dotfiles/home.nix;
+    "nixos/flake.nix".source = /home/user/.dotfiles/flake.nix;
+    "nixos/flake.lock".source = /home/user/.dotfiles/flake.lock;
+    "nixos/modules/cornelis.nix".source = /home/user/.dotfiles/modules/cornelis.nix;
+    "nixos/modules/disks.nix".source = /home/user/.dotfiles/modules/disks.nix;
+    "nixos/modules/gaming.nix".source = /home/user/.dotfiles/modules/gaming.nix;
+    "nixos/modules/hyprland.nix".source = /home/user/.dotfiles/modules/hyprland.nix;
+    "nixos/modules/hyprland-user.nix".source = /home/user/.dotfiles/modules/hyprland-user.nix;
+    "nixos/modules/linux-kernel.nix".source = /home/user/.dotfiles/modules/linux-kernel.nix;
+    "nixos/modules/nvidia.nix".source = /home/user/.dotfiles/modules/nvidia.nix;
+    "nixos/modules/hyprland/animations.nix".source = /home/user/.dotfiles/modules/hyprland/animations.nix;
+    "nixos/modules/hyprland/environment.nix".source = /home/user/.dotfiles/modules/hyprland/environment.nix;
+    "nixos/modules/hyprland/kanagawa.nix".source = /home/user/.dotfiles/modules/hyprland/kanagawa.nix;
+    "nixos/modules/hyprland/keybinds.nix".source = /home/user/.dotfiles/modules/hyprland/keybinds.nix;
+    "nixos/modules/hyprland/monitors.nix".source = /home/user/.dotfiles/modules/hyprland/monitors.nix;
+    "nixos/modules/hyprland/scripts.nix".source = /home/user/.dotfiles/modules/hyprland/scripts.nix;
+    "nixos/modules/hyprland/windowrules.nix".source = /home/user/.dotfiles/modules/hyprland/windowrules.nix;
+    "nixos/symbols/us_qwerty-fr".source = /home/user/.dotfiles/symbols/us_qwerty-fr;
+  };
+
   # Orca Slicer Workaround
   environment.etc."xdg/applications/Orca-Slicer.desktop".text = ''
     [Desktop Entry]
