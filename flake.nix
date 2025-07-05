@@ -64,12 +64,6 @@
             };
           }
 
-          {
-            nixpkgs = {
-              config = commonConfig;
-              overlays = [ hyprpanel.overlay ]; # HyprPanel
-            };
-          }
         ];
         specialArgs = {
           inherit pkgs-unstable;
