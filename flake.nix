@@ -64,6 +64,12 @@
             };
           }
 
+          {
+            nixpkgs = {
+              config = commonConfig;
+            };
+          }
+          
         ];
         specialArgs = {
           inherit pkgs-unstable;
