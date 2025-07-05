@@ -14,15 +14,6 @@
   
   nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
 
-  ### Ghostty workaround for kernel 6.15.4 ### Remove when ghostty is updated or 6.15.5 is released
-  ghostty = pkgs.ghostty.overrideAttrs (_: {
-  preBuild = ''
-    shopt -s globstar
-    sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
-    shopt -u globstar
-   '';
-  });
-
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     max-jobs = "auto";
@@ -214,7 +205,17 @@
   };
 
   # System wide packages
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; 
+  ### Ghostty workaround ### Remove when kernel 6.15.5 is available
+  let
+  ghostty = ghostty.overrideAttrs (_: {
+    preBuild = ''
+      shopt -s globstar
+      sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
+      shopt -u globstar
+    '';
+  });
+in [
     ### Accessibility ###
     at-spi2-atk # Interface protocol definitions and daemon for D-Bus
 
