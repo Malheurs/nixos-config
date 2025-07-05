@@ -208,7 +208,7 @@
   environment.systemPackages = with pkgs; 
   ### Ghostty workaround ### Remove when kernel 6.15.5 is available
   let
-  ghostty = ghostty.overrideAttrs (_: {
+  ghostty-patched = ghostty.overrideAttrs (_: {
     preBuild = ''
       shopt -s globstar
       sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
@@ -296,7 +296,7 @@ in [
 
     ### Terminal ###
     bash # Shell for convenience with downloaded script & other
-    ghostty # Fast, native, feature-rich terminal emulator pushing modern features
+    ghostty-patched # Fast, native, feature-rich terminal emulator pushing modern features
     starship # A minimal, blazing fast, and extremely customizable prompt for any shell
     
     ### Terminal bullshit ###
