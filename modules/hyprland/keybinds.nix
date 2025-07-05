@@ -12,7 +12,7 @@
 
     # RACCOURCIS APPLICATIONS SYSTEME
     bind = $mainMod, Return, exec, $term
-    bind = $mainMod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run
+    bind = $mainMod, SPACE, exec, pkill rofi || ~/.config/hypr/scripts/rofi.sh
     bind = $mainMod, B, exec, $browser
     bind = $mainMod ALT, B, exec, $browser --private-window
     bind = $mainMod, Y, exec, $music
