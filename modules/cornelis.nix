@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, pkgs-unstable, lib, dotfiles, ... }:
+{ pkgs, config, inputs, pkgs-unstable, lib, ... }:
 
 {
   nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];

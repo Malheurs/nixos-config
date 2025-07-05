@@ -14,6 +14,15 @@
   
   nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
 
+  ### Ghostty workaround for kernel 6.15.4 ### Remove when ghostty is updated or 6.15.5 is released
+  ghostty = pkgs.ghostty.overrideAttrs (_: {
+  preBuild = ''
+    shopt -s globstar
+    sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
+    shopt -u globstar
+   '';
+  });
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     max-jobs = "auto";

@@ -7,7 +7,6 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";  # Chaotic-nix
     hyprland.url = "github:hyprwm/Hyprland"; # Hyprland
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";  # HyprPanel
     zen-browser.url = "github:0xc000022070/zen-browser-flake"; # Zen Browser
 
     home-manager = {
@@ -26,7 +25,7 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprpanel, hyprland, zen-browser, aagl, home-manager, dotfiles, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, chaotic, hyprland, zen-browser, aagl, home-manager, dotfiles, ... }:
     let
       system = "x86_64-linux";
 
