@@ -72,6 +72,11 @@
     windowrule = stayfocused,title:^()$,class:^([Ss]team)$
     windowrule = minsize 1 1,title:^()$,class:^([Ss]team)$
 
+    # Black Desert Online
+    windowrule = monitor DP-2,class:^(blackdesert64.exe)$
+    windowrule = workspace 4,class:^(blackdesert64.exe)$
+    windowrule = fullscreen,class:^(blackdesert64.exe)$
+
     # Cave of Qud
     windowrule = monitor DP-2,class:^(CoQ.x86_64)$
     windowrule = workspace 4,class:^(CoQ.x86_64)$
