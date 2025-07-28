@@ -12,7 +12,6 @@
       ### 3D Modeling & Printing ###
       unstable.blender # 3D Creation/Animation/Publishing System
       unstable.orca-slicer # G-code generator for 3D printers (Bambu, Prusa, Voron, VzBot, RatRig, Creality, etc.)
-      unstable.prusa-slicer # G-code generator for 3D printer
       
       ### Cloud Storage & Sync ###
       synology-drive-client # Desktop application to synchronize files and folders between the computer and the Synology Drive server
@@ -51,7 +50,7 @@
       inputs.zen-browser.packages."${pkgs.system}".default # Zen Browser is a privacy-focused web browser based on Firefox and Tor Browser - From flake
 
       ### Gaming Platforms & Launchers ###
-      cartridges # A GTK4 + Libadwaita game launcher
+      unstable.cartridges # A GTK4 + Libadwaita game launcher
       goverlay # An opensource project that aims to create a Graphical UI to help manage Linux overlays
       unstable.heroic # A Native GOG, Epic, and Amazon Games Launcher for Linux, Windows and Mac
       unstable.lutris # Open Source gaming platform for GNU/Linux
