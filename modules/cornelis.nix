@@ -11,7 +11,7 @@
     packages = with pkgs; [
       ### 3D Modeling & Printing ###
       unstable.blender # 3D Creation/Animation/Publishing System
-      unstable.orca-slicer # G-code generator for 3D printers (Bambu, Prusa, Voron, VzBot, RatRig, Creality, etc.)
+      #unstable.orca-slicer # G-code generator for 3D printers (Bambu, Prusa, Voron, VzBot, RatRig, Creality, etc.)
       
       ### Cloud Storage & Sync ###
       synology-drive-client # Desktop application to synchronize files and folders between the computer and the Synology Drive server
