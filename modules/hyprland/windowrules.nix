@@ -73,9 +73,10 @@
     windowrule = minsize 1 1,title:^()$,class:^([Ss]team)$
 
     # Black Desert Online
-    windowrule = monitor DP-2,class:^(blackdesert64.exe)$
-    windowrule = workspace 4,class:^(blackdesert64.exe)$
-    windowrule = fullscreen,class:^(blackdesert64.exe)$
+    windowrule = monitor DP-2,class:^(blackdesert64.exe|blackdesertpatcher32.pae)$
+    windowrule = workspace 4,class:^(blackdesert64.exe|blackdesertpatcher32.pae)$
+    windowrule = fullscreen,class:^(blackdesert64.exe|blackdesertpatcher32.pae)$
+    : 
 
     # Cave of Qud
     windowrule = monitor DP-2,class:^(CoQ.x86_64)$
