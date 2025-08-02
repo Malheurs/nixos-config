@@ -49,13 +49,8 @@
     fsType = "ext4";
     options = [
       "nofail"
-      "uid=1000"
-      "gid=100"
       "rw"
-      "umask=000"
       "x-gvfs-show"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=300"
     ];
   };
   

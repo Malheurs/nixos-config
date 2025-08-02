@@ -76,7 +76,6 @@
     windowrule = monitor DP-2,class:^(blackdesert64.exe|blackdesertpatcher32.pae)$
     windowrule = workspace 4,class:^(blackdesert64.exe|blackdesertpatcher32.pae)$
     windowrule = fullscreen,class:^(blackdesert64.exe|blackdesertpatcher32.pae)$
-    : 
 
     # Cave of Qud
     windowrule = monitor DP-2,class:^(CoQ.x86_64)$
