@@ -43,6 +43,21 @@
       "x-systemd.idle-timeout=300"
     ];
   };
+
+  fileSystems."/WD_Red_Stockage" = {
+    device = "/dev/disk/by-uuid/39a1f9d0-e347-43bd-bd09-476978587865";
+    fsType = "ext4";
+    options = [
+      "nofail"
+      "uid=1000"
+      "gid=100"
+      "rw"
+      "umask=000"
+      "x-gvfs-show"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=300"
+    ];
+  };
   
   # Activer le serveur NFS
   services.nfs.server.enable = true;
