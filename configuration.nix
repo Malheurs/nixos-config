@@ -205,17 +205,7 @@
   };
 
   # System wide packages
-  environment.systemPackages = with pkgs; 
-  ### Ghostty workaround ### Remove when kernel 6.15.5 is available
-  let
-  ghostty-patched = ghostty.overrideAttrs (_: {
-    preBuild = ''
-      shopt -s globstar
-      sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
-      shopt -u globstar
-    '';
-  });
-in [
+  environment.systemPackages = with pkgs; [
     ### Accessibility ###
     at-spi2-atk # Interface protocol definitions and daemon for D-Bus
 
