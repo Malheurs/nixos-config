@@ -286,7 +286,7 @@
 
     ### Terminal ###
     bash # Shell for convenience with downloaded script & other
-    ghostty-patched # Fast, native, feature-rich terminal emulator pushing modern features
+    ghostty # Fast, native, feature-rich terminal emulator pushing modern features
     starship # A minimal, blazing fast, and extremely customizable prompt for any shell
     
     ### Terminal bullshit ###
