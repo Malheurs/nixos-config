@@ -1,1 +1,1 @@
-/etc/static/nixos/home.nix
+/home/cornelis/.dotfiles/home.nix

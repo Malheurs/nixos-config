@@ -1,1 +1,1 @@
-/etc/static/nixos/flake.nix
+/home/cornelis/.dotfiles/flake.nix

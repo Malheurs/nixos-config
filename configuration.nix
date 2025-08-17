@@ -1,1 +1,1 @@
-/etc/static/nixos/configuration.nix
+/home/cornelis/.dotfiles/configuration.nix

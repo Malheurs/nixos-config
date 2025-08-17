@@ -1,1 +1,1 @@
-/etc/static/nixos/hardware-configuration.nix
+/home/cornelis/.dotfiles/hardware-configuration.nix
