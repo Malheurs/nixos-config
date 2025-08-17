@@ -78,18 +78,6 @@
         "type": "github"
       }
     },
-    "dotfiles": {
-      "flake": false,
-      "locked": {
-        "path": ".",
-        "type": "path"
-      },
-      "original": {
-        "path": ".",
-        "type": "path"
-      },
-      "parent": []
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -648,7 +636,6 @@
       "inputs": {
         "aagl": "aagl",
         "chaotic": "chaotic",
-        "dotfiles": "dotfiles",
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_4",

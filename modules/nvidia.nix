@@ -16,15 +16,15 @@
     nvidiaSettings = true;
     forceFullCompositionPipeline = false;
 
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+  #  package = config.boot.kernelPackages.nvidiaPackages.beta;
   
   # To pin a specific package
-  #  package = (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {
-  #    src = pkgs.fetchurl {
-  #      url = "https://download.nvidia.com/XFree86/Linux-x86_64/575.57.08/NVIDIA-Linux-x86_64-575.57.08.run";
-  #      sha256 = "sha256-KqcB2sGAp7IKbleMzNkB3tjUTlfWBYDwj50o3R//xvI=";
-  #    };
-  #  });
+    package = (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {
+      src = pkgs.fetchurl {
+        url = "https://download.nvidia.com/XFree86/Linux-x86_64/575.57.08/NVIDIA-Linux-x86_64-575.64.05.run";
+        sha256 = "sha256-KqcB2sGAp7IKbleMzNkB3tjUTlfWBYDwj50o3R//xvI=";
+      };
+    });
   };
   
   # Optimisations spécifiques Wayland + NVIDIA
