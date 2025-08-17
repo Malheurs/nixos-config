@@ -21,8 +21,8 @@
   # To pin a specific package
     package = (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {
       src = pkgs.fetchurl {
-        url = "https://download.nvidia.com/XFree86/Linux-x86_64/575.57.08/NVIDIA-Linux-x86_64-575.64.05.run";
-        sha256 = "sha256-KqcB2sGAp7IKbleMzNkB3tjUTlfWBYDwj50o3R//xvI=";
+        url = "https://download.nvidia.com/XFree86/Linux-x86_64/575.64.05/NVIDIA-Linux-x86_64-575.64.05.run";
+        sha256 = "sha256-hfK1D5EiYcGRegss9+H5dDr/0Aj9wPIJ9NVWP3dNUC0=";
       };
     });
   };
