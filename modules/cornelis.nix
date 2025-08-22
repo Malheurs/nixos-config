@@ -29,7 +29,7 @@
       python3Full # High-level dynamically-typed programming language
 
       ### Development - Web & Static Sites ###
-      hugo # A fast and modern static website engine
+      unstable.hugo # A fast and modern static website engine
 
       ### Download Managers ###
       media-downloader # Youtube Downloader

@@ -12,19 +12,20 @@
     powerManagement = {
       enable = true;
     };
-    open = true;
+    open = false; # To change when 580 GTK bug is solved
     nvidiaSettings = true;
     forceFullCompositionPipeline = false;
 
-  #  package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   
   # To pin a specific package
-    package = (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {
-      src = pkgs.fetchurl {
-        url = "https://download.nvidia.com/XFree86/Linux-x86_64/575.64.05/NVIDIA-Linux-x86_64-575.64.05.run";
-        sha256 = "sha256-hfK1D5EiYcGRegss9+H5dDr/0Aj9wPIJ9NVWP3dNUC0=";
-      };
-    });
+  #  package = config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs (oldAttrs: {
+  #    src = pkgs.fetchurl {
+  #      url = "https://download.nvidia.com/XFree86/Linux-x86_64/575.64.05/NVIDIA-Linux-x86_64-575.64.05.run";
+  #      sha256 = "sha256-hfK1D5EiYcGRegss9+H5dDr/0Aj9wPIJ9NVWP3dNUC0=";
+  #    };
+  #    version = "575.64.05";
+  #  });
   };
   
   # Optimisations spécifiques Wayland + NVIDIA
