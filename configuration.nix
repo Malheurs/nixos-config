@@ -60,12 +60,24 @@
       dns = "none";
     };
     interfaces.enp5s0 = {
-      useDHCP = true;
-    };
+      useDHCP = false;
+      ipv4.addresses = [{
+      address = "192.168.1.1";
+      prefixLength = 24;
+    }];
+  };
+    defaultGateway = {
+      address = "192.168.1.254";
+      interface = "enp5s0";
+  };
+    dhcpcd.enable = true;
     dhcpcd.extraConfig = ''
       nooption domain_name_servers
       nooption domain_name
       nooption domain_search
+      interface enp5s0
+      ia_na 1
+      ia_pd 2
     '';
     nameservers = [ "9.9.9.9" "149.112.112.112" "2620:fe::9" "2620:fe::fe" ];
     firewall = {
