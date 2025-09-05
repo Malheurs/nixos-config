@@ -84,9 +84,9 @@
       modrinth-app # Modrinth's game launcher
 
       ### Proton Services ###
-      unstable.proton-pass # Desktop application for Proton Pass
+      proton-pass # Desktop application for Proton Pass
       unstable.protonvpn-gui # Proton VPN GTK app for Linux
-      unstable.protonmail-desktop # Desktop application for Mail and Calendar, made with Electron
+      protonmail-desktop # Desktop application for Mail and Calendar, made with Electron
 
       ### Text Editors & Note Taking ###
       helix # A post-modern modal text editor

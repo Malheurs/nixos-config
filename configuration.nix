@@ -58,6 +58,7 @@
     networkmanager = {
       enable = true;
       dns = "none";
+      plugins = with pkgs; [ networkmanager-openvpn ];
     };
     interfaces.enp5s0 = {
       useDHCP = false;
@@ -66,20 +67,22 @@
       prefixLength = 24;
     }];
   };
-    defaultGateway = {
-      address = "192.168.1.254";
-      interface = "enp5s0";
+  defaultGateway = {
+    address = "192.168.1.254";
+    interface = "enp5s0";
+    metric = 100;
   };
     dhcpcd.enable = true;
     dhcpcd.extraConfig = ''
       nooption domain_name_servers
       nooption domain_name
       nooption domain_search
-      interface enp5s0
+      denyinterfaces enp5s0
       ia_na 1
       ia_pd 2
     '';
     nameservers = [ "9.9.9.9" "149.112.112.112" "2620:fe::9" "2620:fe::fe" ];
+    enableIPv6 = false;
     firewall = {
       enable = true;
       allowPing = true;
@@ -150,10 +153,10 @@
   programs = {
     nh = {
       enable = true;
-      clean = {
-        enable = true;
-        extraArgs = "--keep 3 --keep-since 7d";
-      };
+  #    clean = {
+  #      enable = true;
+  #      extraArgs = "--keep 3 --keep-since 7d";
+  #    };
       flake = "/home/cornelis/.dotfiles";
     };
     fish = {

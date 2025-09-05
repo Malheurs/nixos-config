@@ -100,6 +100,11 @@
     windowrule = monitor DP-2,class:^(genshinimpact.exe)$
     windowrule = workspace 4,class:^(genshinimpact.exe)$
     windowrule = fullscreen,class:^(genshinimpact.exe)$
+
+    # Hollow Knight Silksong
+    windowrule = monitor DP-2,class:^(Hollow Knight Silksong)$
+    windowrule = workspace 4,class:^(Hollow Knight Silksong)$
+    windowrule = fullscreen,class:^(Hollow Knight Silksong)$
     
     # Picture-in-Picture
     windowrule = opacity 0.95 0.75,title:^(Picture-in-Picture)$
