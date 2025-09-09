@@ -153,10 +153,10 @@
   programs = {
     nh = {
       enable = true;
-  #    clean = {
-  #      enable = true;
-  #      extraArgs = "--keep 3 --keep-since 7d";
-  #    };
+      clean = {
+        enable = true;
+        extraArgs = "--keep 3 --keep-since 7d";
+      };
       flake = "/home/cornelis/.dotfiles";
     };
     fish = {

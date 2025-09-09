@@ -78,6 +78,7 @@
 
       ### Media Viewers ###
       mcomix # Comic book reader and image viewer
+      newsflash # Modern feed reader designed for the GNOME desktop
 
       ### Minecraft ###
       prismlauncher # Free, open source launcher for Minecraft
