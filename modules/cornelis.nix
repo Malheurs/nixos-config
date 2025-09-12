@@ -37,6 +37,7 @@
       unstable.varia # Simple download manager based on aria2 and libadwaita
 
       ### File Sharing & Transfer ###
+      filezilla # Graphical FTP, FTPS and SFTP client
       rsync # Fast incremental file transfer utility
       warp # Sharing files tools
 
@@ -78,7 +79,7 @@
 
       ### Media Viewers ###
       mcomix # Comic book reader and image viewer
-      newsflash # Modern feed reader designed for the GNOME desktop
+      raven-reader # Open source desktop news reader with flexible settings to optimize your experience
 
       ### Minecraft ###
       prismlauncher # Free, open source launcher for Minecraft
