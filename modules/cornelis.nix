@@ -46,7 +46,7 @@
       pinta # Drawing/editing program modeled after Paint.NET
 
       ### Internet Browser ###
-      unstable.floorp # A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan
+      unstable.floorp-bin # A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan
       #unstable.ladybird # Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI
       inputs.zen-browser.packages."${pkgs.system}".default # Zen Browser is a privacy-focused web browser based on Firefox and Tor Browser - From flake
 
