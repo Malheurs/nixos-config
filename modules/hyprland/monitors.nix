@@ -3,9 +3,9 @@
 {
   home.file.".config/hypr/monitors.conf".text = ''
     # CONFIGURATION MONITEURS
-    monitor = DP-2,3440x1440@165,1920x1440,1,vrr,3,cm,auto,sdrbrightness,1.0,sdrsaturation,1.1
-    monitor = DP-3,3440x1440@120,1920x0,1
-    monitor = HDMI-A-1,1920x1080@60,0x1800,1
+    monitor = DP-2,3440x1440@165,1920x1440,1,vrr,3,cm,auto-srgb,bitdepth,8,sdrbrightness,1.0,sdrsaturation,1.1
+    monitor = DP-3,3440x1440@120,1920x0,1,cm,srgb,bitdepth,8
+    monitor = HDMI-A-1,1920x1080@60,0x1800,1,cm,srgb,bitdepth,8
 
     # ESPACES DE TRAVAIL
     workspace = 1,monitor:DP-2,persistent:true,default:true
