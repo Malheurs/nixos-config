@@ -81,8 +81,8 @@
 
     # CONFIGURATION HDR
     render {
-        cm_fs_passthrough = 2
-        cm_enabled = true
+        cm_fs_passthrough = 0
+        cm_auto_hdr = 0
     }
 
     # VARIABLES
