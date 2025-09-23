@@ -193,6 +193,8 @@
     FLAKE = "/home/cornelis/.dotfiles";
   };
 
+  ### Workarounds ###
+  
   # Orca Slicer Workaround
   environment.etc."xdg/applications/Orca-Slicer.desktop".text = ''
     [Desktop Entry]

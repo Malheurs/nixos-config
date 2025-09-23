@@ -12,7 +12,7 @@
     powerManagement = {
       enable = true;
     };
-    open = false; # To change when 580 GTK bug is solved
+    open = true;
     nvidiaSettings = true;
     forceFullCompositionPipeline = false;
 
