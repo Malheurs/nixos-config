@@ -89,6 +89,7 @@
       proton-pass # Desktop application for Proton Pass
       unstable.protonvpn-gui # Proton VPN GTK app for Linux
       protonmail-desktop # Desktop application for Mail and Calendar, made with Electron
+      wireguard-tools # Tools for the WireGuard secure network tunnel
 
       ### Text Editors & Note Taking ###
       helix # A post-modern modal text editor

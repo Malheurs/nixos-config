@@ -86,6 +86,7 @@
     firewall = {
       enable = true;
       allowPing = true;
+      checkReversePath = false;
     };
   };
 
