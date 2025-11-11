@@ -101,6 +101,11 @@
     windowrule = workspace 4,class:^(genshinimpact.exe)$
     windowrule = fullscreen,class:^(genshinimpact.exe)$
 
+    # Guild Wars 2
+    windowrule = monitor DP-2,class:^(gw2-64.exe)$
+    windowrule = workspace 4,class:^(gw2-64.exe)$
+    windowrule = fullscreen,class:^(gw2-64.exe)$
+
     # Hollow Knight Silksong
     windowrule = monitor DP-2,class:^(Hollow Knight Silksong)$
     windowrule = workspace 4,class:^(Hollow Knight Silksong)$
