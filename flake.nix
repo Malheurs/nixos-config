@@ -5,6 +5,8 @@
     # AAGL 
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
+    # Affinity
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
     # Chaotic‑nix 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # Hyprland
@@ -38,11 +40,12 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    aagl,
+    affinity-nix,
     chaotic,
     hyprland,
-    zen-browser,
-    aagl,
     home-manager,
+    zen-browser,
     ...
   }: let
     system = "x86_64-linux";
@@ -84,6 +87,10 @@
             inherit inputs;
             inherit pkgs-unstable;
           };
+        }
+
+        {
+          environment.systemPackages = [affinity-nix.packages.x86_64-linux.v3];
         }
         
         {
