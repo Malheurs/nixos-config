@@ -74,7 +74,7 @@
       modules = [
         ./configuration.nix
         ./modules/cornelis.nix
-        ./modules/noctalia.nix                  # Noctalia Shell
+        #./modules/noctalia.nix                  # Noctalia Shell
         chaotic.nixosModules.default            # Chaotic‑nix
         aagl.nixosModules.default               # AAGL
         home-manager.nixosModules.home-manager  # Home‑Manager
