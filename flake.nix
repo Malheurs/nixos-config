@@ -88,10 +88,6 @@
             inherit pkgs-unstable;
           };
         }
-
-        {
-          environment.systemPackages = [affinity-nix.packages.x86_64-linux.v3];
-        }
         
         {
           nixpkgs = {

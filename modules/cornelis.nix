@@ -42,6 +42,7 @@
       warp # Sharing files tools
 
       ### Image Editing & Graphics ###
+      inputs.affinity-nix.packages.x86_64-linux.v3 ### Affinity Photo via Affinity-nix
       unstable.gimp3 # The GNU Image Manipulation Program
       pinta # Drawing/editing program modeled after Paint.NET
 
