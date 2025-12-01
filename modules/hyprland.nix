@@ -46,7 +46,7 @@
     pywal # Generate and change color theme on the fly
     pyprland # Hyprland plugin system
     qt6.qtwayland # A cross-platform application framework for C++
-    rofi-wayland # Windows switcher, DMenu
+    rofi # Windows switcher, DMenu
     slurp # Select region for screenshot
     swww # Animated wallpaper daemon
     wlogout # Logout menu
