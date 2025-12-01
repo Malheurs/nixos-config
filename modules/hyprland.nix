@@ -2,7 +2,7 @@
 
 {
   # Remplacer le paquet hyprland dans pkgs par celui d'unstable via pkgs-unstable
-  nixpkgs.overlays = [(final: prev: { hyprland = pkgs-unstable.hyprland; xdg-desktop-portal-hyprland = pkgs-unstable.xdg-desktop-portal-hyprland; })];
+  #nixpkgs.overlays = [(final: prev: { hyprland = pkgs-unstable.hyprland; xdg-desktop-portal-hyprland = pkgs-unstable.xdg-desktop-portal-hyprland; })];
 
   programs.hyprland = {
     enable = true;

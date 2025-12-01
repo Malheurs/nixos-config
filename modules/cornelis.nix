@@ -26,7 +26,7 @@
       godot_4 # Free and Open Source 2D and 3D game engine
 
       ### Development - Languages ###
-      python3Full # High-level dynamically-typed programming language
+      python312 # High-level dynamically-typed programming language
 
       ### Development - Web & Static Sites ###
       unstable.hugo # A fast and modern static website engine
@@ -47,7 +47,7 @@
       pinta # Drawing/editing program modeled after Paint.NET
 
       ### Internet Browser ###
-      unstable.floorp-bin # A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan
+      #unstable.floorp-bin # A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan
       #unstable.ladybird # Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI
       inputs.zen-browser.packages."${pkgs.system}".default # Zen Browser is a privacy-focused web browser based on Firefox and Tor Browser - From flake
 
@@ -125,7 +125,7 @@
           vscode-extensions.esbenp.prettier-vscode # Code formatter using prettier
           vscode-extensions.ritwickdey.liveserver # Local server for web dev
           vscode-extensions.formulahendry.auto-rename-tag # Automatically rename paired HTML tag
-          unstable.vscode-extensions.anthropic.claude-code # Harness the power of Claude Code without leaving your IDE
+          #unstable.vscode-extensions.anthropic.claude-code # Harness the power of Claude Code without leaving your IDE
 
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           # Custom Theme

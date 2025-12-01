@@ -10,28 +10,24 @@
     # Chaotic‑nix 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
     # Home‑Manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Quickshell & Noctalia
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Noctalia
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";  # Use same quickshell version
     };
     # Zen Browser
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     
     
     # Nixpkgs – version stable (25.05) & unstable
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -78,6 +74,7 @@
         chaotic.nixosModules.default            # Chaotic‑nix
         aagl.nixosModules.default               # AAGL
         home-manager.nixosModules.home-manager  # Home‑Manager
+        hyprland.nixosModules.default           # Hyprland
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -99,6 +96,7 @@
       specialArgs = {
         inherit pkgs-unstable;
         inherit inputs;
+        inherit hyprland;
       };
     };
   };
