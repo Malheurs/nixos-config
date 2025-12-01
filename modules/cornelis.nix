@@ -70,7 +70,7 @@
       wooting-udev-rules # udev rules that give NixOS permission to communicate with Wooting keyboards
 
       ### Media Players & Streaming ###
-      g4music # A beautiful, fast, fluent, light weight music player written in GTK4
+      gapless # A beautiful, fast, fluent, light weight music player written in GTK4
       obs-studio # Free and open source software for video recording and live streaming
       
       ### Media Editing & Conversion ###
