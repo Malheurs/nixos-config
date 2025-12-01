@@ -11,7 +11,7 @@
     packages = with pkgs; [
       ### 3D Modeling & Printing ###
       unstable.blender # 3D Creation/Animation/Publishing System
-      #unstable.orca-slicer # G-code generator for 3D printers (Bambu, Prusa, Voron, VzBot, RatRig, Creality, etc.)
+      unstable.orca-slicer # G-code generator for 3D printers (Bambu, Prusa, Voron, VzBot, RatRig, Creality, etc.)
       
       ### Cloud Storage & Sync ###
       synology-drive-client # Desktop application to synchronize files and folders between the computer and the Synology Drive server
@@ -34,7 +34,7 @@
       ### Download Managers ###
       media-downloader # Youtube Downloader
       qbittorrent # Featureful free software BitTorrent client
-      unstable.varia # Simple download manager based on aria2 and libadwaita
+      #unstable.varia # Simple download manager based on aria2 and libadwaita
 
       ### File Sharing & Transfer ###
       filezilla # Graphical FTP, FTPS and SFTP client
@@ -61,7 +61,8 @@
       sunshine # Sunshine is a Game stream host for Moonlight
 
       ### Gaming Utilities ###
-      unstable.path-of-building # Offline build planner for Path of Exile
+      lsfg-vk # Vulkan layer for frame generation (Requires owning Lossless Scaling)
+      unstable.rusty-path-of-building # Offline build planner for Path of Exile
       vesktop # Alternate client for Discord with Vencord built-in
 
       ### Hardware Specific ###
@@ -83,8 +84,8 @@
       raven-reader # Open source desktop news reader with flexible settings to optimize your experience
 
       ### Minecraft ###
-      prismlauncher # Free, open source launcher for Minecraft
-      modrinth-app # Modrinth's game launcher
+      #prismlauncher # Free, open source launcher for Minecraft
+      #modrinth-app # Modrinth's game launcher
 
       ### Proton Services ###
       proton-pass # Desktop application for Proton Pass
