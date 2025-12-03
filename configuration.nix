@@ -10,7 +10,7 @@
       ./modules/hyprland.nix # Hyprland Display Manager & config
       ./modules/linux-kernel.nix # Linux Kernel config
       ./modules/nvidia.nix # Nvidia drivers & config
-      #./modules/noctalia.nix # Noctalia Home Manager config
+      ./modules/noctalia.nix # Noctalia Home Manager config
     ];
   
   nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];

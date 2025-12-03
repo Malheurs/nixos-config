@@ -35,7 +35,7 @@
     cliphist # Wayland clipboard manager
     eww # ElKowars wacky widgets
     hyprpaper # Blazing fast wayland wallpaper utility
-    unstable.hyprpanel # Hyprland's panel
+    #unstable.hyprpanel # Hyprland's panel
     hyprpicker # Wayland color picker
     hyprshot # Hyprshot is an utility to easily take screenshots in Hyprland using your mouse
     libsForQt5.qt5ct # Qt5 Configuration Tool

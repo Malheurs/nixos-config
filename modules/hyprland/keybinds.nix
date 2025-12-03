@@ -27,6 +27,7 @@
     bind = $mainMod SHIFT, O, togglesplit
     bind = $mainMod SHIFT, M, exit
     bind = CTRL ALT, Delete, exec, hyprctl dispatch exit 0
+    bind = $mainMod, B, exec, noctalia ipc call bar toggle
 
     # NAVIGATION ESPACES DE TRAVAIL
     bind = $mainMod, tab, workspace, m+1

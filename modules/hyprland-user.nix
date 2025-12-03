@@ -96,7 +96,8 @@
     exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &          # for XDPH
     exec-once = sleep 0.2 & goxlr-daemon & # Launch GoXLR deamon
     exec-once = sleep 0.2 & systemctl restart --user polkit-gnome-authentication-agent-1 & # Launch Polkit
-    exec-once = hyprpanel & # launch the system panel
+    #exec-once = hyprpanel & # launch the system panel
+    #exec-once = qs -c noctalia-shell # launch the system panel
     exec-once = nm-applet --indicator &  # systray app for Network/Wifi
     exec-once = eww daemon &  # start eww daemon
     exec-once = wl-paste --type text --watch cliphist store & # clipboard store text data
