@@ -6,12 +6,23 @@
 
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
   };
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      hyprland = {
+        default = [ "hyprland" "gtk" ];
+      };
+    };
   };
   
   environment.sessionVariables = {
@@ -45,6 +56,7 @@
     playerctl # CLI for controlling media players that implement MPRIS
     pywal # Generate and change color theme on the fly
     pyprland # Hyprland plugin system
+    quickshell # Flexbile QtQuick based desktop shell toolkit
     qt6.qtwayland # A cross-platform application framework for C++
     rofi # Windows switcher, DMenu
     slurp # Select region for screenshot

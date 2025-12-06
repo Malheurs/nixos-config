@@ -78,11 +78,14 @@
     xwayland {
         force_zero_scaling = true
     }
-
+    
     # CONFIGURATION HDR
     render {
-        cm_fs_passthrough = 0
+        cm_fs_passthrough = 1
         cm_auto_hdr = 0
+    }
+    experimental {
+        xx_color_management_v4 = true
     }
 
     # VARIABLES

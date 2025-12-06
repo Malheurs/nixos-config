@@ -49,7 +49,7 @@
       ### Internet Browser ###
       #unstable.floorp-bin # A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan
       #unstable.ladybird # Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI
-      inputs.zen-browser.packages."${pkgs.system}".default # Zen Browser is a privacy-focused web browser based on Firefox and Tor Browser - From flake
+      inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default # Zen Browser is a privacy-focused web browser based on Firefox and Tor Browser - From flake
 
       ### Gaming Platforms & Launchers ###
       unstable.cartridges # A GTK4 + Libadwaita game launcher
@@ -177,6 +177,7 @@
       enable = true;
       user = "cornelis";
     };
+   defaultSession = "hyprland-uwsm";
   };
 
   hardware.wooting.enable = true;
