@@ -10,7 +10,7 @@
       position = 1920x1440
       scale = 1
       vrr = 3
-    #  cm = srgb
+      cm = srgb
       bitdepth = 10
       sdrbrightness = 1.0
       sdrsaturation = 1.1
