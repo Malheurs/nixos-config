@@ -1,5 +1,8 @@
 { pkgs, config, inputs, pkgs-unstable, lib, ... }:
 
+let
+  sddm-themes = pkgs.callPackage ./sddm-theme.nix { };
+in
 {
   nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
 
@@ -93,6 +96,9 @@
       protonmail-desktop # Desktop application for Mail and Calendar, made with Electron
       wireguard-tools # Tools for the WireGuard secure network tunnel
 
+      ### SDDM Theme ###
+      sddm-themes.sddm-astraunot #
+
       ### Text Editors & Note Taking ###
       helix # A post-modern modal text editor
       obsidian # A powerful knowledge base that works on top of a local folder of plain text Markdown files
@@ -170,15 +176,23 @@
   wireshark.enable = true;
 };
   
-  services.displayManager = {
-    sddm.enable = true; 
-    sddm.wayland.enable = true;
+  services = {
+  displayManager = {
+    enable = true;
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+      theme = "sugar-dark";
+      extraPackages = [ sddm-themes.sddm-astraunot ];
+    };
     autoLogin = {
       enable = true;
       user = "cornelis";
     };
-   defaultSession = "hyprland-uwsm";
+    defaultSession = "hyprland-uwsm";
   };
+  desktopManager.gnome.enable = true;
+};
 
   hardware.wooting.enable = true;
 
