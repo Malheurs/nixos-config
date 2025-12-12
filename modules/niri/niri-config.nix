@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./niri/niri-keybinds.nix
-    ./niri/niri-monitors.nix
+    ./niri-keybinds.nix
+    ./niri-monitors.nix
   #  ./niri/scripts.nix
   #  ./niri/kanagawa.nix
   #  ./niri/windowrules.nix

@@ -32,18 +32,28 @@
       bitdepth = 8
     }
 
-    # HDMI-A-1
+    # DP-1
     monitorv2 {
-      output = HDMI-A-1
-      mode = 1920x1080@60
+      output = DP-1
+      mode = 1920x1080@240
       position = 0x1800
       scale = 1
       bitdepth = 8
     }
 
+    # HDMI-1
+    monitorv2 {
+      output = HDMI-A-1
+      mode = preferred
+      scale = 1
+      bitdepth = 10
+    }
+
+    monitor = ,preferred,auto,1
+
     # ESPACES DE TRAVAIL
     workspace = 1,monitor:DP-2,persistent:true,default:true
-    workspace = 2,monitor:HDMI-A-1,persistent:true
+    workspace = 2,monitor:DP-1,persistent:true
     workspace = 3,monitor:DP-3,persistent:true
     workspace = 4,monitor:DP-2,persistent:true
   '';
