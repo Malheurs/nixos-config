@@ -1,7 +1,7 @@
 { inputs, pkgs, lib, config, pkgs-unstable, ... }:
 
 {
-  import = [
+  imports = [
     ./niri/niri-config.nix
   ];
 

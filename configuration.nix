@@ -8,7 +8,7 @@
       ./modules/gaming.nix # Steam, Genshin Impact & 8bitdo controller
       ./modules/hyprland.nix # Hyprland Display Manager & config
       ./modules/linux-kernel.nix # Linux Kernel config
-      # ./modules/niri.nix
+      ./modules/niri.nix
       ./modules/noctalia.nix # Noctalia Home Manager config
       ./modules/nvidia.nix # Nvidia drivers & config
     ];
