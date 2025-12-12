@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./niri/niri-config.nix
+  #  ./niri/niri-config.nix
   ];
 
   programs.niri.enable = true;

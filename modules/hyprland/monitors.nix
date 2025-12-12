@@ -41,14 +41,6 @@
       bitdepth = 8
     }
 
-    # HDMI-1
-    monitorv2 {
-      output = HDMI-A-1
-      mode = preferred
-      scale = 1
-      bitdepth = 10
-    }
-
     monitor = ,preferred,auto,1
 
     # ESPACES DE TRAVAIL
