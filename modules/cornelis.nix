@@ -36,6 +36,7 @@ in
 
       ### Download Managers ###
       media-downloader # Youtube Downloader
+      prowlarr # Indexer manager/proxy built on the popular arr .net/reactjs base stack
       qbittorrent # Featureful free software BitTorrent client
       #unstable.varia # Simple download manager based on aria2 and libadwaita
 

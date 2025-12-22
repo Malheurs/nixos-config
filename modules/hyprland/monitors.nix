@@ -41,6 +41,7 @@
       bitdepth = 8
     }
 
+    # Others
     monitor = ,preferred,auto,1
 
     # ESPACES DE TRAVAIL
