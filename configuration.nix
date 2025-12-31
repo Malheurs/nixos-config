@@ -11,6 +11,7 @@
       ./modules/niri.nix
       ./modules/noctalia.nix # Noctalia Home Manager config
       ./modules/nvidia.nix # Nvidia drivers & config
+      ./modules/protonvpn.nix # VPN config
     ];
   
   nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
