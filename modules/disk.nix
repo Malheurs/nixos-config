@@ -1,5 +1,19 @@
 { pkgs, config, lib, ... }:
 
+let
+  nfsOptions = [
+    "vers=4.1" "rsize=1048576" "wsize=1048576"
+    "soft" "timeo=50" "retrans=1" "bg"
+    "x-systemd.automount" "x-systemd.mount-timeout=30"
+    "x-systemd.after=network-online.target" "_netdev"
+  ];
+  nfsServer = "192.168.1.83";
+  mkNfsMount = vol: {
+    device = "${nfsServer}:/volume1/${vol}";
+    fsType = "nfs";
+    options = nfsOptions;
+  };
+in
 {
   # Systèmes de fichiers supportés au démarrage
   boot.supportedFilesystems = [ "ntfs" "cifs" "nfs" ];
@@ -11,8 +25,6 @@
       "nofail"
       "x-gvfs-show"
       "noatime"
-      "nodiratime"
-      "discard"
     ];
   };
     
@@ -23,8 +35,6 @@
       "nofail"
       "x-gvfs-show"
       "noatime"
-      "nodiratime"
-      "discard"
     ];
   };
 
@@ -35,7 +45,6 @@
       "nofail"
       "uid=1000"
       "gid=100"
-      "rw"
       "umask=000"
       "x-gvfs-show"
       "noauto"
@@ -49,7 +58,7 @@
     fsType = "ext4";
     options = [
       "nofail"
-      "rw"
+      "noatime"
       "x-gvfs-show"
     ];
   };
@@ -76,78 +85,18 @@
   networking.firewall.allowedUDPPorts = [ 2049 111 ];
 
   # Configuration optimisée pour les volumes pleins
-  fileSystems."/mnt/Documents" = {
-    device = "192.168.1.83:/volume1/Documents";
-    fsType = "nfs";
-    options = [ 
-      "vers=4.1"
-      "rsize=131072"                         # Réduire à 128KB pour les volumes pleins
-      "wsize=131072"                         # Réduire à 128KB pour les volumes pleins
-      "soft"                                 # CHANGÉ: soft mount pour éviter les blocages
-      "intr"                                 # Permettre l'interruption
-      "timeo=50"                             # RÉDUIT: timeout plus court (5 sec)
-      "retrans=1"                            # RÉDUIT: moins de retransmissions
-      "bg"                                   # Montage en arrière-plan
-      "x-systemd.automount" 
-      "noauto" 
-      "x-systemd.mount-timeout=30"           # RÉDUIT: timeout de montage plus court
-      "x-systemd.after=network-online.target"
-      "x-systemd.idle-timeout=300"           # RÉDUIT: timeout d'inactivité (5 min)
-      "_netdev"
-    ];
-  };
-
-  fileSystems."/mnt/Games" = {
-    device = "192.168.1.83:/volume1/Games";
-    fsType = "nfs";
-    options = [ 
-      "vers=4.1"
-      "rsize=131072"
-      "wsize=131072"
-      "soft"
-      "intr"
-      "timeo=50"
-      "retrans=1"
-      "bg"
-      "x-systemd.automount" 
-      "noauto" 
-      "x-systemd.mount-timeout=30"
-      "x-systemd.after=network-online.target"
-      "x-systemd.idle-timeout=300"
-      "_netdev" 
-    ];
-  };
-
-  fileSystems."/mnt/Images" = {
-    device = "192.168.1.83:/volume1/Images";
-    fsType = "nfs";
-    options = [ 
-      "vers=4.1"
-      "rsize=131072"
-      "wsize=131072"
-      "soft"
-      "intr"
-      "timeo=50"
-      "retrans=1"
-      "bg"
-      "x-systemd.automount" 
-      "noauto" 
-      "x-systemd.mount-timeout=30"
-      "x-systemd.after=network-online.target"
-      "x-systemd.idle-timeout=300"
-      "_netdev"
-    ];
-  };
-
+  fileSystems."/mnt/Documents" = mkNfsMount "Documents";
+  fileSystems."/mnt/Games"     = mkNfsMount "Games";
+  fileSystems."/mnt/Images"    = mkNfsMount "Images";
+  fileSystems."/mnt/Softwares" = mkNfsMount "Softwares";
   fileSystems."/mnt/Media" = {
     device = "192.168.1.83:/volume1/Media";
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=131072"
-      "wsize=131072"
+      "rsize=1048576"
+      "wsize=1048576"
       "soft"
-      "intr"
       "timeo=50"
       "retrans=1"
       "bg"
@@ -163,10 +112,9 @@
     fsType = "nfs";
     options = [ 
       "vers=4.1"
-      "rsize=131072"
-      "wsize=131072"
+      "rsize=1048576"
+      "wsize=1048576"
       "soft"
-      "intr"
       "timeo=50"
       "retrans=1"
       "bg"
@@ -177,25 +125,6 @@
     ];
   };
 
-  fileSystems."/mnt/Softwares" = {
-    device = "192.168.1.83:/volume1/Softwares";
-    fsType = "nfs";
-    options = [ 
-      "vers=4.1"
-      "rsize=131072"
-      "wsize=131072"
-      "soft"
-      "intr"
-      "timeo=50"
-      "retrans=1"
-      "bg"
-      "x-systemd.automount" 
-      "x-systemd.mount-timeout=30"
-      "x-systemd.after=network-online.target"
-      "_netdev"
-    ];
-  };
-  
   # Paquets essentiels pour la gestion des systèmes de fichiers
   environment.systemPackages = with pkgs; [
     cifs-utils

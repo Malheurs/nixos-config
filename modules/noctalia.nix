@@ -1,8 +1,9 @@
-{ config, pkgs, inputs, quickshell, ... }:
+{ config, pkgs, inputs, pkgs-unstable, quickshell, ... }:
 {
   # install package
   environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+  #  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    unstable.noctalia-shell
   ];
   # import the nixos module
   imports = [

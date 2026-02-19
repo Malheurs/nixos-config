@@ -95,8 +95,6 @@
     $WallpaperPath = ~/Images/wallpapers
 
     # APPLICATIONS AU DEMARRAGE
-    exec-once = dbus-update-activation-environment --systemd --all &                               # for XDPH
-    exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &          # for XDPH
     exec-once = sleep 0.2 & goxlr-daemon & # Launch GoXLR deamon
     exec-once = sleep 0.2 & systemctl restart --user polkit-gnome-authentication-agent-1 & # Launch Polkit
     #exec-once = hyprpanel & # launch the system panel
@@ -110,6 +108,6 @@
     exec-once = $scriptsDir/zen-workspace-manager.sh
     # Make DP-2 the primary monitor
     exec-once = sleep 1.5s && hyprctl dispatch workspace 1 & # start on workspace 1
-    exec-once = sleep 7 && watch -n 60 xrandr --output DP-2 --primary # set primary monitor every 1 minutes
+    exec-once = sleep 2 && watch -n 300 xrandr --output DP-2 --primary # set primary monitor every 1 minutes
   '';
 }

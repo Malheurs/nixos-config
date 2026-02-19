@@ -13,7 +13,7 @@
   # Path for Proton
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "/home/user/.steam/root/compatibilitytools.d";
+      "/home/cornelis/.steam/root/compatibilitytools.d";
   };
   
   # Enable Gamemode & Gamescope
@@ -25,8 +25,6 @@
     substituters = [ "https://ezkea.cachix.org" ];
     trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
   };
-  
-  imports = [ inputs.aagl.nixosModules.default];
 
   programs.anime-game-launcher.enable = true;
   aagl.enableNixpkgsReleaseBranchCheck = false;

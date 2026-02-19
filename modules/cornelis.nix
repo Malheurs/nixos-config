@@ -4,8 +4,6 @@ let
   sddm-themes = pkgs.callPackage ./sddm-theme.nix { };
 in
 {
-  nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
-
   users.users.cornelis = {
     isNormalUser = true;
     description = "Cornelis";
@@ -95,10 +93,9 @@ in
       proton-pass # Desktop application for Proton Pass
       unstable.protonvpn-gui # Proton VPN GTK app for Linux
       protonmail-desktop # Desktop application for Mail and Calendar, made with Electron
-      wireguard-tools # Tools for the WireGuard secure network tunnel
 
       ### SDDM Theme ###
-      sddm-themes.sddm-astraunot #
+      sddm-astronaut # Modern looking qt6 sddm theme
 
       ### Text Editors & Note Taking ###
       helix # A post-modern modal text editor
@@ -183,8 +180,8 @@ in
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "sugar-dark";
-      extraPackages = [ sddm-themes.sddm-astraunot ];
+      theme = "sddm-astronaut-theme";
+      extraPackages = [ pkgs.sddm-astronaut ];
     };
     autoLogin = {
       enable = true;
@@ -192,22 +189,19 @@ in
     };
     defaultSession = "hyprland-uwsm";
   };
-  desktopManager.gnome.enable = true;
+  goxlr-utility = {
+    enable = true;
+  };
+  sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+  desktopManager.gnome.enable = false;
 };
 
   hardware.wooting.enable = true;
-
-  services = {
-    goxlr-utility = {
-      enable = true;
-    };
-    sunshine = {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
-  };
 
   environment.sessionVariables = {
     FLAKE = "/home/cornelis/.dotfiles";

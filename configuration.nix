@@ -1,6 +1,8 @@
 { config, pkgs, inputs, outputs, lib, pkgs-unstable, ... }:
 
 {
+  nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
+
   imports = [
       ./hardware-configuration.nix # Hardware configuration
       ./modules/cornelis.nix # User - That's me
@@ -13,8 +15,6 @@
       ./modules/nvidia.nix # Nvidia drivers & config
       ./modules/protonvpn.nix # VPN config
     ];
-  
-  nixpkgs.overlays = [ (final: prev: { unstable = pkgs-unstable; }) ];
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -27,11 +27,15 @@
       "https://cache.nixos.org/"
       "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
+      "https://attic.xuyh0120.win/lantian"
+      "https://cache.garnix.io"
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
     ];
   };
 
@@ -150,11 +154,8 @@
       enable = true;
       packages = with pkgs; [ xfce.xfconf gnome2.GConf ];
     };
-    mpd.enable = false;
     tumbler.enable = true;
-    fwupd.enable = false;
     auto-cpufreq.enable = false;
-    power-profiles-daemon.enable = false;
     envfs.enable = true;
     fstrim = {
       enable = true;
@@ -308,7 +309,6 @@
     gtk-engine-murrine # Needed for a lot of GTK components
     kanagawa-gtk-theme # A GTK theme with the Kanagawa colour palette
     kanagawa-icon-theme # An icon theme for the Kanagawa colour palette
-    libsForQt5.qt5ct # QT5 theming
     linux-wallpaperengine # Wallpaper Engine backgrounds for Linux
 
     ### Terminal ###
@@ -332,7 +332,6 @@
     usbutils # Tools for working with USB devices, such as lsusb
 
     ### Utilities ###
-    home-manager # Nix-based user environment configurator
     jq # A lightweight and flexible command-line JSON processor
     killall # Kill all command
     yad # GUI dialog tool for shell scripts

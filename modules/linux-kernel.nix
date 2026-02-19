@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
-let
-  kernel = pkgs.linuxPackages_cachyos.kernel; # Workaround for modules kernel 6,12+
-in
+#let
+#  kernel = pkgs.linuxPackages_cachyos.kernel; # Workaround for modules kernel 6,12+
+#in
 {
   boot.kernelParams = [ 
   "pcie_aspm=off" 
@@ -13,8 +13,7 @@ in
   ];
 
   # Linux Kernel - CachyOS
-  system.modulesTree = [ (lib.getOutput "modules" kernel) ]; # Workaround for modules kernel 6,12+
-  boot.kernelPackages = pkgs.linuxPackages_cachyos; # Stable
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest; # New repo
 
   # Paramètres de performance
   boot.kernel.sysctl = {

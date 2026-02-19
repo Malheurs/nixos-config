@@ -6,9 +6,12 @@
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
     # Affinity
-    affinity-nix.url = "github:mrshmllow/affinity-nix";
-    # Chaotic‑nix 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    affinity-nix = {
+      url = "github:mrshmllow/affinity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # CachyOS Kernel
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     # Hyprland
     #hyprland.url = "github:hyprwm/Hyprland";
     hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
@@ -38,7 +41,7 @@
     nixpkgs-unstable,
     aagl,
     affinity-nix,
-    chaotic,
+    nix-cachyos-kernel,
     hyprland,
     home-manager,
     zen-browser,
@@ -69,9 +72,6 @@
 
       modules = [
         ./configuration.nix
-        ./modules/cornelis.nix
-        ./modules/noctalia.nix                  # Noctalia Shell
-        chaotic.nixosModules.default            # Chaotic‑nix
         aagl.nixosModules.default               # AAGL
         home-manager.nixosModules.home-manager  # Home‑Manager
         hyprland.nixosModules.default           # Hyprland
@@ -89,6 +89,11 @@
         {
           nixpkgs = {
             config = commonConfig;
+            overlays = [
+              # Use the exact kernel versions as defined in this repo.
+              # Guarantees you have binary cache.
+              nix-cachyos-kernel.overlays.pinned
+            ];
           };
         }
       ];
