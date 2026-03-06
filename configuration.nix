@@ -6,11 +6,12 @@
   imports = [
       ./hardware-configuration.nix # Hardware configuration
       ./modules/cornelis.nix # User - That's me
+      ./modules/caelestia.nix # Caelestia shell
       ./modules/disk.nix # Disk, filesystem & NFS mount
       ./modules/gaming.nix # Steam, Genshin Impact & 8bitdo controller
       ./modules/hyprland.nix # Hyprland Display Manager & config
       ./modules/linux-kernel.nix # Linux Kernel config
-      ./modules/niri.nix
+      #./modules/niri.nix
       ./modules/noctalia.nix # Noctalia Home Manager config
       ./modules/nvidia.nix # Nvidia drivers & config
       ./modules/protonvpn.nix # VPN config
@@ -52,7 +53,6 @@
       compressor = "zstd";
       compressorArgs = [ "-1" "-T0" ];
     };
-    plymouth.enable = true; ### Change for SDDM
     tmp = {
       useTmpfs = true;
       tmpfsSize = "75%";
@@ -78,15 +78,6 @@
     interface = "enp5s0";
     metric = 100;
   };
-    dhcpcd.enable = true;
-    dhcpcd.extraConfig = ''
-      nooption domain_name_servers
-      nooption domain_name
-      nooption domain_search
-      denyinterfaces enp5s0
-      ia_na 1
-      ia_pd 2
-    '';
     nameservers = [ "9.9.9.9" "149.112.112.112" "2620:fe::9" "2620:fe::fe" ];
     enableIPv6 = false;
     firewall = {
@@ -107,14 +98,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  #  extraConfig.pipewire."92-low-latency" = {
-	#    "context.properties" = {
-	#	    "default.clock.rate" = 48000;
-	#	    "default.clock.quantum" = 32;
-	#	    "default.clock.min-quantum" = 32;
-	#	    "default.clock.max-quantum" = 32;
-	#    };
-  #  };
   };
 
   time = {
@@ -174,7 +157,7 @@
     };
     fish = {
       enable = true;
-      shellInit = "set fish_greeting
+      interactiveShellInit = "set fish_greeting
         microfetch
         starship init fish | source
         zoxide init fish | source
@@ -190,7 +173,6 @@
     polkit.enable = true;
     pam.services = {
       cornelis.enableGnomeKeyring = true;
-      swaylock = {};
     };
   };
 
@@ -227,7 +209,7 @@
 
   zramSwap = {
     enable = true;
-    priority = 5;
+    priority = 100;
     memoryPercent = 60;
     algorithm = "zstd";
   };
@@ -270,7 +252,7 @@
     ### Media & Multimedia ###
     mpv # General-purpose media player, fork of MPlayer and mplayer2
     imv # A command line image viewer for tiling window managers
-    ffmpeg_6-full # Cross-platform solution to record, convert and stream audio and video
+    ffmpeg-full # Complete, cross-platform solution to record, convert and stream audio and video
 
     ### Navigation & Search ###
     fzf # Command-line fuzzy finder written in Go
@@ -282,7 +264,7 @@
     wget # Wget command
 
     ### Office & Productivity ###
-    gedit # File editor
+    gnome-text-editor # Text Editor for GNOME
     libreoffice # Comprehensive, professional-quality productivity suite, a variant of openoffice.org
 
     ### Security ###
@@ -337,8 +319,6 @@
     yad # GUI dialog tool for shell scripts
 
     ### Version Control (Git) ###
-    gitu # A TUI Git client inspired by Magit
-    gitui # Blazing fast terminal-ui for Git written in Rust
     git-ignore # Fetch .gitignore templates from gitignore.io
     git-credential-manager # A secure, cross-platform Git credential storage with authentication to GitHub, Azure Repos, and other popular Git hosting services
     gh # GitHub CLI tool

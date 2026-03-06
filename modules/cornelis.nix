@@ -60,6 +60,8 @@ in
       unstable.lutris # Open Source gaming platform for GNU/Linux
       mangohud # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
       moonlight-qt # Play your PC games on almost any device
+      pegasus-frontend # Cross platform, customizable graphical frontend for launching emulators and managing your game collection
+      retroarch # Multi-platform emulator frontend for libretro cores
       sunshine # Sunshine is a Game stream host for Moonlight
 
       ### Gaming Utilities ###

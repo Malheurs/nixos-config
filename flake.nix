@@ -12,6 +12,11 @@
     };
     # CachyOS Kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    # Cealestia Shell
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Hyprland
     #hyprland.url = "github:hyprwm/Hyprland";
     hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
@@ -20,7 +25,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Noctalia
+    # Noctalia Shell
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";

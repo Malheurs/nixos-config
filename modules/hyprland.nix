@@ -60,7 +60,7 @@
     qt6.qtwayland # A cross-platform application framework for C++
     rofi # Windows switcher, DMenu
     slurp # Select region for screenshot
-    swww # Animated wallpaper daemon
+    vulkan-hdr-layer-kwin6 # Vulkan Wayland HDR WSI Layer (Xaver Hugl's fork for KWin 6)
     wlogout # Logout menu
     wl-clipboard # CLI copy/paste
     wf-recorder # Screen recording

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, pkgs-unstable, quickshell, ... }:
+{ config, pkgs, inputs, pkgs-unstable, ... }:
 {
   # install package
   environment.systemPackages = with pkgs; [

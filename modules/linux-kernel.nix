@@ -10,6 +10,7 @@
   "mitigations=off"  # Meilleures performances, désactive certaines mitigations de sécurité
   "preempt=full"     # Préemption complète pour meilleure interactivité
   "iommu=pt"         # Performance I/O
+  "transparent_hugepage=madvise"
   ];
 
   # Linux Kernel - CachyOS
@@ -29,5 +30,9 @@
     "net.ipv4.tcp_rmem" = "4096 87380 16777216";
     "net.ipv4.tcp_wmem" = "4096 65536 16777216";
     "net.ipv4.tcp_congestion_control" = "bbr"; # Algorithme BBR pour meilleure performance réseau
+    "net.ipv4.tcp_fastopen" = 3;
+    "net.core.netdev_max_backlog" = 16384;
+    "net.ipv4.udp_rmem_min" = 8192;
+    "net.ipv4.udp_wmem_min" = 8192;
   };
 }
