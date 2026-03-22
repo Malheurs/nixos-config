@@ -94,25 +94,6 @@
     $WallpaperPath = ~/Images/wallpapers
 
     # APPLICATIONS AU DEMARRAGE
-    exec-once = sleep 0.2 & goxlr-daemon & # Launch GoXLR deamon
-    exec-once = sleep 0.2 & systemctl restart --user polkit-gnome-authentication-agent-1 & # Launch Polkit
-    #exec-once = hyprpanel & # launch the system panel
-    #exec-once = noctalia-shell &
-    exec-once = caelestia-shell -d &
-    exec-once = nm-applet --indicator &  # systray app for Network/Wifi
-    exec-once = eww daemon &  # start eww daemon
-    exec-once = wl-paste --type text --watch cliphist store & # clipboard store text data
-    exec-once = wl-paste --type image --watch cliphist store & # clipboard store image data
-    exec-once = sleep 1.5 && swww query || swww init  & # init wallpaper switcher
-    exec-once = sleep 1.5 && $SwwwRandom $WallpaperPath & # random wallpaper switcher every 30 minutes
-    exec-once = $scriptsDir/zen-workspace-manager.sh
-    # Make DP-2 the primary monitor
-    exec-once = sleep 1.5s && hyprctl dispatch workspace 1 & # start on workspace 1
-    exec-once = sleep 2 && watch -n 300 xrandr --output DP-2 --primary # set primary monitor every 1 minutes
-    # Launch daemon
-    exec-once = sleep 0.5 && systemctl --user start gvfs-daemon.service && thunar --daemon
-
-    # APPLICATIONS AU DEMARRAGE
     # ── Layer 0 : services système (pas de dépendances) ─────────────────
     exec-once = systemctl --user start gvfs-daemon.service
     exec-once = systemctl restart --user polkit-gnome-authentication-agent-1
