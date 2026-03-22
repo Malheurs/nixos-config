@@ -12,7 +12,7 @@
       ./modules/hyprland.nix # Hyprland Display Manager & config
       ./modules/linux-kernel.nix # Linux Kernel config
       #./modules/niri.nix
-      ./modules/noctalia.nix # Noctalia Home Manager config
+      #./modules/noctalia.nix # Noctalia Home Manager config
       ./modules/nvidia.nix # Nvidia drivers & config
       ./modules/protonvpn.nix # VPN config
     ];

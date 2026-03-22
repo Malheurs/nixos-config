@@ -63,7 +63,7 @@
         enable_swallow = true
         swallow_regex = ^(kitty|com.mitchellh.ghostty)$
         close_special_on_empty = true
-        new_window_takes_over_fullscreen = 2
+        on_focus_under_fullscreen = 2
         enable_anr_dialog = false
     }
 
@@ -80,10 +80,8 @@
     }
     
     # CONFIGURATION HDR
-    experimental {
-        xx_color_management_v4 = true
-    }
     render {
+        cm_enabled = true
         cm_fs_passthrough = 1
         cm_auto_hdr = 0
         direct_scanout = 2
@@ -100,7 +98,7 @@
     exec-once = sleep 0.2 & systemctl restart --user polkit-gnome-authentication-agent-1 & # Launch Polkit
     #exec-once = hyprpanel & # launch the system panel
     #exec-once = noctalia-shell &
-    exec-once = caelestia shell -d &
+    exec-once = caelestia-shell -d &
     exec-once = nm-applet --indicator &  # systray app for Network/Wifi
     exec-once = eww daemon &  # start eww daemon
     exec-once = wl-paste --type text --watch cliphist store & # clipboard store text data
@@ -111,5 +109,34 @@
     # Make DP-2 the primary monitor
     exec-once = sleep 1.5s && hyprctl dispatch workspace 1 & # start on workspace 1
     exec-once = sleep 2 && watch -n 300 xrandr --output DP-2 --primary # set primary monitor every 1 minutes
+    # Launch daemon
+    exec-once = sleep 0.5 && systemctl --user start gvfs-daemon.service && thunar --daemon
+
+    # APPLICATIONS AU DEMARRAGE
+    # ── Layer 0 : services système (pas de dépendances) ─────────────────
+    exec-once = systemctl --user start gvfs-daemon.service
+    exec-once = systemctl restart --user polkit-gnome-authentication-agent-1
+    exec-once = goxlr-daemon
+
+    # ── Layer 1 : shell & tray (après que le compositeur est prêt) ──────
+    #exec-once = hyprpanel
+    #exec-once = noctalia-shell
+    exec-once = caelestia-shell -d
+    exec-once = nm-applet --indicator
+    #exec-once = eww daemon
+
+    # ── Layer 2 : clipboard (pas de dépendances particulières) ──────────
+    exec-once = wl-paste --type text --watch cliphist store
+    exec-once = wl-paste --type image --watch cliphist store
+
+    # ── Layer 3 : wallpaper (laisse swww se stabiliser) ─────────────────
+    exec-once = sleep 1.5 && { swww query || swww init; }
+    exec-once = sleep 2 && $SwwwRandom $WallpaperPath
+
+    # ── Layer 4 : fichiers & workspace ──────────────────────────────────
+    exec-once = sleep 2 && thunar --daemon
+    exec-once = sleep 2 && hyprctl dispatch workspace 1
+    exec-once = $scriptsDir/zen-workspace-manager.sh
+    exec-once = sleep 2 && watch -n 300 xrandr --output DP-2 --primary
   '';
 }

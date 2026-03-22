@@ -12,7 +12,8 @@
 
     # RACCOURCIS APPLICATIONS SYSTEME
     bind = $mainMod, Return, exec, $term
-    bind = $mainMod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run
+    #bind = $mainMod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run
+    bind = $mainMod, SPACE, exec, caelestia-shell ipc call drawers toggle launcher
     bind = $mainMod, B, exec, $browser
     bind = $mainMod ALT, B, exec, $browser --private-window
     bind = $mainMod, Y, exec, $music
@@ -24,7 +25,7 @@
     bind = $mainMod, C, killactive
     bind = $mainMod, A, togglefloating
     bind = $mainMod SHIFT, P, pseudo
-    bind = $mainMod SHIFT, O, togglesplit
+    #bind = $mainMod SHIFT, O, togglesplit
     bind = $mainMod SHIFT, M, exit
     bind = CTRL ALT, Delete, exec, hyprctl dispatch exit 0
     bind = $mainMod, B, exec, noctalia ipc call bar toggle

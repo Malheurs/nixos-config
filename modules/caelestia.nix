@@ -1,6 +1,6 @@
 { config, pkgs, inputs, pkgs-unstable, ... }:
 {
   environment.systemPackages = with pkgs; [
-    caelestia-shell.packages.<system>.default
+    inputs.caelestia-shell.packages.${pkgs.stdenv.hostPlatform.system}.with-cli
   ];
 }

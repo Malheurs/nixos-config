@@ -18,8 +18,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Hyprland
-    #hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
+    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
     # Home‑Manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";

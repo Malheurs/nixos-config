@@ -52,6 +52,7 @@ in
       #unstable.floorp-bin # A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan
       #unstable.ladybird # Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI
       inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default # Zen Browser is a privacy-focused web browser based on Firefox and Tor Browser - From flake
+      ungoogled-chromium # Open source web browser from Google, with dependencies on Google web services removed
 
       ### Gaming Platforms & Launchers ###
       unstable.cartridges # A GTK4 + Libadwaita game launcher
