@@ -115,10 +115,10 @@
     exec-once = sleep 2 && $SwwwRandom $WallpaperPath
 
     # ── Layer 4 : fichiers & workspace ──────────────────────────────────
-    exec-once = sleep 2 && thunar --daemon
-    exec-once = sleep 2 && hyprctl dispatch workspace 1
+    exec-once = sleep 1 && thunar --daemon
+    exec-once = sleep 1 && hyprctl dispatch workspace 1
     exec-once = $scriptsDir/zen-workspace-manager.sh
-    exec-once = sleep 2 && watch -n 300 xrandr --output DP-2 --primary
+    exec-once = sleep 1 && watch -n 300 xrandr --output DP-2 --primary
 
     # ── Layer 5 : apps lourdes ───────────────────────────────────────────
     exec-once = sleep 3 && steam -silent
