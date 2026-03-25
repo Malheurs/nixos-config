@@ -122,6 +122,6 @@
     exec-once = watch -n 300 xrandr --output DP-2 --primary
 
     # ── Layer 5 : apps lourdes ───────────────────────────────────────────
-    exec-once = nm-online -t 30 && steam -silent
+    exec-once = sleep 3 && steam -silent
     '';
 }
