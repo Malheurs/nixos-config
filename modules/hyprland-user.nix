@@ -94,33 +94,34 @@
     $WallpaperPath = ~/Images/wallpapers
 
     # APPLICATIONS AU DEMARRAGE
-    # ── Layer 0 : services système (pas de dépendances) ─────────────────
+    # ── Layer 0 : services système ───────────────────────────────────────
     exec-once = systemctl --user start gvfs-daemon.service
     exec-once = systemctl restart --user polkit-gnome-authentication-agent-1
     exec-once = goxlr-daemon
 
-    # ── Layer 1 : shell & tray (après que le compositeur est prêt) ──────
+    # ── Layer 1 : shell & tray ───────────────────────────────────────────
     #exec-once = hyprpanel
     #exec-once = noctalia-shell
     exec-once = caelestia-shell -d
     exec-once = nm-applet --indicator
     #exec-once = eww daemon
 
-    # ── Layer 2 : clipboard (pas de dépendances particulières) ──────────
+    # ── Layer 2 : clipboard ──────────────────────────────────────────────
     exec-once = wl-paste --type text --watch cliphist store
     exec-once = wl-paste --type image --watch cliphist store
 
-    # ── Layer 3 : wallpaper (laisse swww se stabiliser) ─────────────────
+    # ── Layer 3 : wallpaper ──────────────────────────────────────────────
     exec-once = sleep 1.5 && { swww query || swww init; }
     exec-once = sleep 2 && $SwwwRandom $WallpaperPath
 
-    # ── Layer 4 : fichiers & workspace ──────────────────────────────────
-    exec-once = sleep 1 && thunar --daemon
-    exec-once = sleep 1 && hyprctl dispatch workspace 1
+    # ── Layer 4 : fichiers & workspace ───────────────────────────────────
+    exec-once = nm-online -t 30 && ls /mnt/{Documents,Games,Images,Media,Private,Softwares} > /dev/null 2>&1
+    exec-once = thunar --daemon
+    exec-once = hyprctl dispatch workspace 1
     exec-once = $scriptsDir/zen-workspace-manager.sh
-    exec-once = sleep 1 && watch -n 300 xrandr --output DP-2 --primary
+    exec-once = watch -n 300 xrandr --output DP-2 --primary
 
     # ── Layer 5 : apps lourdes ───────────────────────────────────────────
-    exec-once = sleep 3 && steam -silent
-  '';
+    exec-once = nm-online -t 30 && steam -silent
+    '';
 }
