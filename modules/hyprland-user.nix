@@ -119,6 +119,7 @@
     exec-once = thunar --daemon
     exec-once = hyprctl dispatch workspace 1
     exec-once = $scriptsDir/zen-workspace-manager.sh
+    exec-once = xrandr --output DP-2 --primary
     exec-once = watch -n 300 xrandr --output DP-2 --primary
 
     # ── Layer 5 : apps lourdes ───────────────────────────────────────────
