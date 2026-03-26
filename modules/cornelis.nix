@@ -94,7 +94,7 @@ in
 
       ### Proton Services ###
       proton-pass # Desktop application for Proton Pass
-      unstable.protonvpn-gui # Proton VPN GTK app for Linux
+      unstable.proton-vpn # Proton VPN GTK app for Linux
       protonmail-desktop # Desktop application for Mail and Calendar, made with Electron
 
       ### SDDM Theme ###
