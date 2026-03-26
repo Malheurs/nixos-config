@@ -68,6 +68,7 @@ in
       ### Gaming Utilities ###
       lsfg-vk # Vulkan layer for frame generation (Requires owning Lossless Scaling)
       unstable.rusty-path-of-building # Offline build planner for Path of Exile
+      unstable.stoat-desktop # Open source user-first chat platform
       vesktop # Alternate client for Discord with Vencord built-in
 
       ### Hardware Specific ###
