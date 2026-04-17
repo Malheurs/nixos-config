@@ -202,10 +202,10 @@
   };
   
   # Virtualisation
-  #programs.virt-manager.enable = true;
-  #users.groups.libvirtd.members = ["cornelis"];
-  #virtualisation.libvirtd.enable = true;
-  #virtualisation.spiceUSBRedirection.enable = true;
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["cornelis"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   zramSwap = {
     enable = true;

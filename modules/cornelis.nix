@@ -34,7 +34,6 @@ in
 
       ### Download Managers ###
       media-downloader # Youtube Downloader
-      prowlarr # Indexer manager/proxy built on the popular arr .net/reactjs base stack
       qbittorrent # Featureful free software BitTorrent client
       #unstable.varia # Simple download manager based on aria2 and libadwaita
 
@@ -83,6 +82,7 @@ in
       ### Media Editing & Conversion ###
       handbrake # A tool for converting video files and ripping DVDs
       mkvtoolnix # MKV container tool
+      onlyoffice-desktopeditors # Office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents
       unstable.picard  # Official MusicBrainz tagger
 
       ### Media Viewers ###
@@ -103,7 +103,8 @@ in
 
       ### Text Editors & Note Taking ###
       helix # A post-modern modal text editor
-      obsidian # A powerful knowledge base that works on top of a local folder of plain text Markdown files
+      unstable.obsidian # A powerful knowledge base that works on top of a local folder of plain text Markdown files
+      planify # Task manager with Todoist support designed for GNU/Linux
 
       ### Virtualization & Compatibility ###
       appimage-run # Run AppImages

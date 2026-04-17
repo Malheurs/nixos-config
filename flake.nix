@@ -14,11 +14,11 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     # Cealestia Shell
     caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+      url = "github:caelestia-dots/shell/0e07176f";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.54.2";
     #hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
     # Home‑Manager
     home-manager = {
@@ -57,6 +57,9 @@
     # Options communes appliquées à tous les imports de nixpkgs
     commonConfig = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-38.8.4"
+      ];
     };
 
     # Paquets stables
